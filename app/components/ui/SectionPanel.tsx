@@ -1,7 +1,13 @@
 type SectionPanelProps = {
-  tone?: "dark" | "mist";
+  tone?: "dark" | "mist" | "terracotta";
   children: React.ReactNode;
   className?: string;
+};
+
+const TONES: Record<NonNullable<SectionPanelProps["tone"]>, string> = {
+  dark: "bg-ink text-white",
+  mist: "bg-mist text-ink",
+  terracotta: "bg-terracotta bg-wavy-fine text-white",
 };
 
 export default function SectionPanel({
@@ -11,11 +17,7 @@ export default function SectionPanel({
 }: SectionPanelProps) {
   return (
     <div
-      className={[
-        "rounded-frame p-8 lg:p-12",
-        tone === "dark" ? "bg-ink text-white" : "bg-mist text-ink",
-        className,
-      ].join(" ")}
+      className={["rounded-frame p-8 lg:p-12", TONES[tone], className].join(" ")}
     >
       {children}
     </div>

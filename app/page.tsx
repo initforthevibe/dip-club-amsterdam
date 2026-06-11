@@ -2,6 +2,7 @@ import HomeHero from "./components/HomeHero";
 import ActivityCard from "./components/ActivityCard";
 import ScrollReveal from "./components/ScrollReveal";
 import StatsBar from "./components/StatsBar";
+import FloatingImages from "./components/FloatingImages";
 import StatementBlock from "./components/ui/StatementBlock";
 import MediaFrame from "./components/ui/MediaFrame";
 import SectionPanel from "./components/ui/SectionPanel";
@@ -43,8 +44,8 @@ export default function Home() {
   return (
     <main>
       <HomeHero
-        backgroundImage="/media/dc-polaroid-2-dolomites-hike.jpg"
-        backgroundAlt="Dip Club community hiking in the Dolomites"
+        backgroundImage="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
+        backgroundAlt="Dip Club members at an Amsterdam swimming spot against the city skyline"
         utility={
           latestPost
             ? {
@@ -59,8 +60,18 @@ export default function Home() {
       />
 
       {/* Intro Section */}
-      <section className="bg-paper py-24 lg:py-32">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
+      <section className="relative overflow-hidden bg-paper py-24 lg:py-44">
+        <FloatingImages
+          images={[
+            { src: "/media/dc-polaroid-1-amstel-dip.JPG", position: "left-[5%] top-[8%] w-32 aspect-[4/5]", depth: 18 },
+            { src: "/media/dc-polaroid-6-amstel-dip-flip.jpg", position: "left-[14%] bottom-[12%] w-40 aspect-[5/4]", depth: 10 },
+            { src: "/media/dc-polaroid-3-south-africa-hike.jpg", position: "left-[33%] top-[16%] w-28 aspect-square", depth: 26 },
+            { src: "/media/dc-quarterly-excursion.JPG", position: "right-[26%] bottom-[6%] w-36 aspect-[4/3]", depth: 14 },
+            { src: "/media/dc-polaroid-4-dolomites-hike.jpg", position: "right-[8%] top-[10%] w-40 aspect-[4/3]", depth: 8 },
+            { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-[4/5]", depth: 22 },
+          ]}
+        />
+        <div className="relative mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
             <StatementBlock
               eyebrow="Begin your journey"
@@ -185,11 +196,11 @@ export default function Home() {
       <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <SectionPanel tone="dark">
+            <SectionPanel tone="terracotta">
               <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
                 <div className="flex-1">
                   <h2 className="type-statement">Join the community.</h2>
-                  <p className="type-body mt-4 max-w-md text-white/65">
+                  <p className="type-body mt-4 max-w-md text-white/80">
                     Be the first to know about upcoming dips, excursions, and
                     adventures. Got a question? Don&apos;t hesitate to ask us at{" "}
                     <a
@@ -201,15 +212,15 @@ export default function Home() {
                     .
                   </p>
                   <div className="mt-8">
-                    <Button href={SITE.whatsapp} variant="primary">
+                    <Button href={SITE.whatsapp} variant="ink">
                       Join the WhatsApp community
                     </Button>
                   </div>
                 </div>
                 <div className="flex-1">
                   <MediaFrame
-                    src="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
-                    alt="Dip Club members at an Amsterdam swimming spot"
+                    src="/media/dc-polaroid-2-dolomites-hike.jpg"
+                    alt="Dip Club community hiking in the Dolomites"
                     radius="card"
                     className="h-[240px] lg:h-[300px]"
                     sizes="(max-width: 1024px) 100vw, 50vw"

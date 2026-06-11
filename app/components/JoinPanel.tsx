@@ -14,12 +14,12 @@ export default function JoinPanel({
   return (
     <section className="bg-paper py-12 lg:py-16">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
-        <SectionPanel tone="dark">
+        <SectionPanel tone="terracotta">
           <div className="max-w-xl">
             <h2 className="type-statement">{title}</h2>
-            <p className="type-body mt-4 text-white/65">{body}</p>
+            <p className="type-body mt-4 text-white/80">{body}</p>
             <div className="mt-8">
-              <Button href={SITE.whatsapp} variant="primary">
+              <Button href={SITE.whatsapp} variant="ink">
                 Join the WhatsApp community
               </Button>
             </div>

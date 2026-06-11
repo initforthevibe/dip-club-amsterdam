@@ -26,10 +26,10 @@ Deploy: `git push` to main → Vercel auto-deploys. No separate deploy step need
 Design system spec: `docs/superpowers/specs/2026-06-11-design-system-design.md` ("Framed Minimal").
 
 - Canvas: white `#FFFFFF` (paper), text near-black `#0D0D0D` (ink), secondary fills `#F0EFED` (mist)
-- Terracotta `#F06530` appears ONLY on the primary CTA (WhatsApp join) — never as decoration
+- Terracotta `#F06530` appears ONLY on primary CTAs (WhatsApp join buttons) and CTA panels (`SectionPanel tone="terracotta"`, which carries the `bg-wavy-fine` texture and an ink Button) — never as text decoration
 - One typeface: Switzer (self-hosted via next/font/local, `app/fonts/`) — five type roles as `type-display/statement/title/body/micro` utilities in globals.css
 - Media always sits in rounded frames: `rounded-frame` (20px) / `rounded-card` (12px); heroes are inset 8px/16px from the viewport via MediaFrame pattern
-- Buttons are pills — use `app/components/ui/Button`, never hand-rolled
+- Buttons are pills with a circled right-arrow that rotates to ↗ on hover — use `app/components/ui/Button`, never hand-rolled
 - Compose pages from `app/components/ui/` primitives (Button, MediaFrame, UtilityCard, StatementBlock, SectionPanel) + JoinPanel
 - Display headlines are sentence case with periods ("Reset. Your. Mind.")
 

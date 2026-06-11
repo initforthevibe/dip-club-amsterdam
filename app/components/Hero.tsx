@@ -59,7 +59,7 @@ export default function Hero({
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
           </>
         )}
 

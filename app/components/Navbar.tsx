@@ -67,7 +67,7 @@ export default function Navbar() {
         <div
           className={[
             "flex justify-center transition-all duration-300",
-            pill ? "pt-3" : "pt-0",
+            pill ? "pt-3" : "pt-4",
           ].join(" ")}
         >
           <div
@@ -97,7 +97,7 @@ export default function Navbar() {
                   : pathname === link.href;
                 const linkClasses = [
                   "text-sm font-medium transition-colors duration-200",
-                  isActive ? "text-white" : "text-white/70 hover:text-white",
+                  isActive ? "text-white" : "text-white/90 hover:text-white",
                 ].join(" ");
 
                 if (link.children) {
@@ -161,9 +161,17 @@ export default function Navbar() {
                 href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-terracotta px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-terracotta-dark"
+                className="group inline-flex items-center gap-2 rounded-full bg-terracotta py-1.5 pl-5 pr-1.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-terracotta-dark"
               >
-                Join <span aria-hidden="true">↗</span>
+                Join
+                <span
+                  aria-hidden="true"
+                  className="flex h-6 w-6 items-center justify-center rounded-full bg-white/25 transition-transform duration-300 group-hover:-rotate-45"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </a>
             </div>
 
@@ -237,9 +245,17 @@ export default function Navbar() {
             href={SITE.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 rounded-full bg-terracotta px-8 py-3 text-base font-medium text-white transition-colors duration-200 hover:bg-terracotta-dark"
+            className="group mt-4 inline-flex items-center gap-3 rounded-full bg-terracotta py-2 pl-8 pr-2 text-base font-medium text-white transition-colors duration-200 hover:bg-terracotta-dark"
           >
-            Join the WhatsApp community <span aria-hidden="true">↗</span>
+            Join the WhatsApp community
+            <span
+              aria-hidden="true"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/25 transition-transform duration-300 group-hover:-rotate-45"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
           </a>
         </nav>
       </div>

@@ -50,7 +50,7 @@ export default function HomeHero({
             revealed ? "scale-100 opacity-100" : "scale-105 opacity-0",
           ].join(" ")}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
 
         {/* Text content */}
         <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">

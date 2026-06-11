@@ -40,7 +40,7 @@ export default function MediaFrame({
         priority={priority}
       />
       {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
       )}
       {children && <div className="relative z-10 h-full">{children}</div>}
     </div>
