@@ -5,11 +5,11 @@ import FieldNoteCard from "./FieldNoteCard";
 import type { FieldNoteMeta } from "@/lib/field-notes";
 
 const PILLARS = [
-  "Cold Exposure",
-  "Heat Exposure",
-  "Breathwork",
-  "Time in Nature",
-  "Real Connection",
+  "Outdoor Swimming",
+  "Social Sauna",
+  "Breath Work",
+  "Hiking",
+  "Bushcraft",
 ];
 
 export default function FieldNotesList({ posts }: { posts: FieldNoteMeta[] }) {

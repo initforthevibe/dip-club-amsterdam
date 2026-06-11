@@ -12,29 +12,29 @@ import { SITE } from "@/lib/site";
 
 const PILLARS = [
   {
-    title: "Cold Exposure",
+    title: "Outdoor Swimming",
     description:
-      "Ice baths and cold water swimming reset your nervous system, boost circulation, and build mental resilience. The cold teaches you to stay calm when everything tells you to run.",
+      "Ice baths and open-water swims in Amsterdam's waterways, all year round. The cold resets your nervous system, boosts circulation, and teaches you to stay calm when everything tells you to run.",
   },
   {
-    title: "Heat Exposure",
+    title: "Social Sauna",
     description:
-      "Sauna sessions and heat training complement the cold. The contrast between extremes strengthens your cardiovascular system and deepens recovery.",
+      "The sauna is where the community thaws out and conversations get warm. The contrast between hot and cold strengthens your cardiovascular system and deepens recovery.",
   },
   {
-    title: "Breathwork",
+    title: "Breath Work",
     description:
       "Guided breathing techniques prepare your body for the cold, reduce stress, and unlock energy you didn't know you had. We practice before every dip.",
   },
   {
-    title: "Time in Nature",
+    title: "Hiking",
     description:
-      "From Amsterdam's waterways to European mountain trails — we get outside. Nature is the gym, the therapy room, and the classroom all at once.",
+      "From day trips beyond the city to multi-day hikes across Europe's mountains. The trail is the gym, the therapy room, and the classroom all at once.",
   },
   {
-    title: "Real Connection",
+    title: "Bushcraft",
     description:
-      "Shared discomfort breaks down walls faster than any networking event. Cold water, long trails, and honest conversations — that's how strangers become friends.",
+      "Foraging, fire-making, and the old skills of living well outdoors. Knowing how to take care of yourself in nature turns any landscape into home.",
   },
 ];
 

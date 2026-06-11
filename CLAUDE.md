@@ -54,4 +54,4 @@ content/
 - Don't hardcode WhatsApp/Instagram/email links in components — read from `content/` or props
 - Don't change section order without explicit instruction
 - All images via `next/image` with explicit width + height
-- Field Notes pillars must match exactly: Cold Exposure, Heat Exposure, Breathwork, Time in Nature, Real Connection
+- Field Notes pillars must match exactly: Outdoor Swimming, Social Sauna, Breath Work, Hiking, Bushcraft

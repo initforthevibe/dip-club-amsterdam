@@ -76,7 +76,7 @@ export default function Footer() {
             alt="Dip Club Amsterdam"
             width={1200}
             height={400}
-            className="mt-16 h-auto w-full opacity-60 [mask-image:linear-gradient(to_bottom,black_15%,transparent_95%)]"
+            className="mx-auto mt-16 h-auto w-3/4"
           />
 
           {/* Bottom bar */}
