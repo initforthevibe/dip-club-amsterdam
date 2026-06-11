@@ -2,103 +2,91 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Button from "./ui/Button";
+import UtilityCard from "./ui/UtilityCard";
+import { SITE } from "@/lib/site";
 
 type HomeHeroProps = {
   backgroundImage: string;
   backgroundAlt: string;
+  utility?: {
+    label: string;
+    title: string;
+    image?: string;
+    imageAlt?: string;
+    href: string;
+  };
 };
 
 export default function HomeHero({
   backgroundImage,
   backgroundAlt,
+  utility,
 }: HomeHeroProps) {
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
-    // Start reveal after a short delay to let the orange render first
-    const timer = setTimeout(() => setRevealed(true), 800);
+    const timer = setTimeout(() => setRevealed(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
+  const stagger = (delay: string) =>
+    [
+      "transition-all duration-700 ease-out",
+      revealed ? `opacity-100 translate-y-0 ${delay}` : "opacity-0 translate-y-4",
+    ].join(" ");
+
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background image — always present behind the overlay */}
-      <div className="absolute inset-0 z-0">
+    <section className="bg-paper p-2 lg:p-4">
+      <div className="relative min-h-[560px] overflow-hidden rounded-frame h-[calc(100svh-16px)] lg:h-[calc(100svh-32px)]">
         <Image
           src={backgroundImage}
           alt={backgroundAlt}
           fill
-          className="object-cover"
           priority
           sizes="100vw"
+          className={[
+            "object-cover transition-all duration-[1400ms] ease-out",
+            revealed ? "scale-100 opacity-100" : "scale-105 opacity-0",
+          ].join(" ")}
         />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-dark/40" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/15" />
 
-      {/* Orange curtain that slides away */}
-      <div
-        className={[
-          "absolute inset-0 z-10 bg-terracotta origin-left transition-transform duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)]",
-          revealed ? "translate-x-full" : "translate-x-0",
-        ].join(" ")}
-      />
-
-      {/* Text content — always visible, on top of everything */}
-      <div className="relative z-20 max-w-[1320px] mx-auto px-6 lg:px-12 pb-16 pt-32 lg:pb-24 min-h-screen flex items-end">
-        <div className="max-w-3xl">
-          <h1
-            className={[
-              "font-heading text-7xl sm:text-8xl lg:text-[120px] leading-[0.85] tracking-tight text-white uppercase transition-all duration-700 ease-out",
-              revealed ? "opacity-100 translate-y-0 delay-500" : "opacity-100 translate-y-0",
-            ].join(" ")}
-          >
-            RESET YOUR MIND
-          </h1>
-
-          <p
-            className={[
-              "mt-4 text-lg sm:text-xl font-medium transition-all duration-700 ease-out",
-              revealed ? "text-white/90 delay-700" : "text-white/90",
-            ].join(" ")}
-          >
-            Seek Discomfort. Find Yourself.
-          </p>
-
-          <p
-            className={[
-              "mt-4 text-base max-w-md transition-all duration-700 ease-out",
-              revealed ? "text-white/70 delay-[800ms]" : "text-white/70",
-            ].join(" ")}
-          >
-            Amsterdam&apos;s urban wellness community. Ice baths, breathwork, and
-            outdoor adventures for those who choose growth over comfort.
-          </p>
-
-          <div
-            className={[
-              "flex flex-wrap items-center gap-3 mt-6 transition-all duration-700 ease-out",
-              revealed
-                ? "opacity-100 translate-y-0 delay-[900ms]"
-                : "opacity-100 translate-y-0",
-            ].join(" ")}
-          >
-            <a
-              href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-none bg-white px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-white/90 transition-all"
+        {/* Text content */}
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
+          <div className="max-w-3xl">
+            <h1 className={["type-display text-white", stagger("delay-300")].join(" ")}>
+              Reset. Your. Mind.
+            </h1>
+            <p className={["type-title mt-4 text-white/85", stagger("delay-500")].join(" ")}>
+              Seek discomfort. Find yourself.
+            </p>
+            <p
+              className={[
+                "type-body mt-3 max-w-md text-white/65",
+                stagger("delay-[600ms]"),
+              ].join(" ")}
             >
-              Join Our WhatsApp Community ↘
-            </a>
-            <a
-              href="#activities"
-              className="rounded-none border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
-            >
-              See Activities ↘
-            </a>
+              Amsterdam&apos;s urban wellness community. Ice baths, breathwork, and
+              outdoor adventures for those who choose growth over comfort.
+            </p>
+            <div className={["mt-7 flex flex-wrap gap-3", stagger("delay-700")].join(" ")}>
+              <Button href={SITE.whatsapp} variant="primary">
+                Join the WhatsApp community
+              </Button>
+              <Button href="#activities" variant="ghost">
+                See activities
+              </Button>
+            </div>
           </div>
         </div>
+
+        {/* Floating utility card */}
+        {utility && (
+          <div className={["absolute right-6 bottom-6 hidden w-64 lg:block", stagger("delay-[900ms]")].join(" ")}>
+            <UtilityCard {...utility} tone="light" />
+          </div>
+        )}
       </div>
     </section>
   );
