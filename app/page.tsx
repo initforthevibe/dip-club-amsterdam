@@ -2,6 +2,7 @@ import HomeHero from "./components/HomeHero";
 import ActivityCard from "./components/ActivityCard";
 import ScrollReveal from "./components/ScrollReveal";
 import StatsBar from "./components/StatsBar";
+import FloatingImages from "./components/FloatingImages";
 import StatementBlock from "./components/ui/StatementBlock";
 import MediaFrame from "./components/ui/MediaFrame";
 import SectionPanel from "./components/ui/SectionPanel";
@@ -11,29 +12,29 @@ import { SITE } from "@/lib/site";
 
 const PILLARS = [
   {
-    title: "Cold Exposure",
+    title: "Outdoor Swimming",
     description:
-      "Ice baths and cold water swimming reset your nervous system, boost circulation, and build mental resilience. The cold teaches you to stay calm when everything tells you to run.",
+      "Ice baths and open-water swims in Amsterdam's waterways, all year round. The cold resets your nervous system, boosts circulation, and teaches you to stay calm when everything tells you to run.",
   },
   {
-    title: "Heat Exposure",
+    title: "Social Sauna",
     description:
-      "Sauna sessions and heat training complement the cold. The contrast between extremes strengthens your cardiovascular system and deepens recovery.",
+      "The sauna is where the community thaws out and conversations get warm. The contrast between hot and cold strengthens your cardiovascular system and deepens recovery.",
   },
   {
-    title: "Breathwork",
+    title: "Breath Work",
     description:
       "Guided breathing techniques prepare your body for the cold, reduce stress, and unlock energy you didn't know you had. We practice before every dip.",
   },
   {
-    title: "Time in Nature",
+    title: "Hiking",
     description:
-      "From Amsterdam's waterways to European mountain trails — we get outside. Nature is the gym, the therapy room, and the classroom all at once.",
+      "From day trips beyond the city to multi-day hikes across Europe's mountains. The trail is the gym, the therapy room, and the classroom all at once.",
   },
   {
-    title: "Real Connection",
+    title: "Bushcraft",
     description:
-      "Shared discomfort breaks down walls faster than any networking event. Cold water, long trails, and honest conversations — that's how strangers become friends.",
+      "Foraging, fire-making, and the old skills of living well outdoors. Knowing how to take care of yourself in nature turns any landscape into home.",
   },
 ];
 
@@ -43,8 +44,8 @@ export default function Home() {
   return (
     <main>
       <HomeHero
-        backgroundImage="/media/dc-polaroid-2-dolomites-hike.jpg"
-        backgroundAlt="Dip Club community hiking in the Dolomites"
+        backgroundImage="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
+        backgroundAlt="Dip Club members at an Amsterdam swimming spot against the city skyline"
         utility={
           latestPost
             ? {
@@ -76,16 +77,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Let's reconnect */}
+      <section className="relative overflow-hidden bg-paper py-32 lg:py-52">
+        <FloatingImages
+          images={[
+            { src: "/media/dc-polaroid-1-amstel-dip.JPG", position: "left-[5%] top-[8%] w-32 aspect-[4/5]", depth: 18 },
+            { src: "/media/dc-polaroid-6-amstel-dip-flip.jpg", position: "left-[14%] bottom-[12%] w-40 aspect-[5/4]", depth: 10 },
+            { src: "/media/dc-polaroid-3-south-africa-hike.jpg", position: "left-[30%] top-[14%] w-28 aspect-square", depth: 26 },
+            { src: "/media/dc-quarterly-excursion.JPG", position: "right-[28%] bottom-[8%] w-36 aspect-[4/3]", depth: 14 },
+            { src: "/media/dc-polaroid-4-dolomites-hike.jpg", position: "right-[8%] top-[10%] w-40 aspect-[4/3]", depth: 8 },
+            { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-[4/5]", depth: 22 },
+          ]}
+        />
+        <div className="relative mx-auto max-w-[1320px] px-6 text-center lg:px-12">
+          <ScrollReveal>
+            <h2 className="text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.025em]">
+              Let&apos;s reconnect.
+            </h2>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Our Pillars Section */}
       <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <p className="type-micro mb-10 text-ink/45">What we practice</p>
+            <p className="type-micro mb-12 text-ink/45">What we practice</p>
           </ScrollReveal>
-          <div className="grid gap-px border-y border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
             {PILLARS.map((pillar, i) => (
-              <ScrollReveal key={pillar.title} delay={i * 0.08} className="h-full bg-paper">
-                <div className="h-full px-1 py-8 lg:pr-6">
+              <ScrollReveal key={pillar.title} delay={i * 0.08}>
+                <div className="border-t border-ink/20 pt-5">
                   <p className="type-micro text-ink/45">
                     {String(i + 1).padStart(2, "0")}
                   </p>
@@ -185,11 +207,11 @@ export default function Home() {
       <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <SectionPanel tone="dark">
+            <SectionPanel tone="terracotta">
               <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
                 <div className="flex-1">
                   <h2 className="type-statement">Join the community.</h2>
-                  <p className="type-body mt-4 max-w-md text-white/65">
+                  <p className="type-body mt-4 max-w-md text-white/80">
                     Be the first to know about upcoming dips, excursions, and
                     adventures. Got a question? Don&apos;t hesitate to ask us at{" "}
                     <a
@@ -201,15 +223,15 @@ export default function Home() {
                     .
                   </p>
                   <div className="mt-8">
-                    <Button href={SITE.whatsapp} variant="primary">
+                    <Button href={SITE.whatsapp} variant="ink">
                       Join the WhatsApp community
                     </Button>
                   </div>
                 </div>
                 <div className="flex-1">
                   <MediaFrame
-                    src="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
-                    alt="Dip Club members at an Amsterdam swimming spot"
+                    src="/media/dc-polaroid-2-dolomites-hike.jpg"
+                    alt="Dip Club community hiking in the Dolomites"
                     radius="card"
                     className="h-[240px] lg:h-[300px]"
                     sizes="(max-width: 1024px) 100vw, 50vw"

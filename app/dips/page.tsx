@@ -99,9 +99,9 @@ export default function DipsPage() {
               The science behind the shiver.
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px border-y border-ink/10 bg-ink/10 sm:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-3">
             <ScrollReveal delay={0}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Cold exposure</h3>
                 <p className="type-body mt-3 text-ink/60">
                   Cold water immersion activates your sympathetic nervous system, releasing norepinephrine and boosting dopamine levels by up to 250%. Regular cold exposure improves circulation, reduces inflammation, and trains your body to manage stress more effectively. Over time, you build resilience — not just to cold, but to discomfort in general.
@@ -109,7 +109,7 @@ export default function DipsPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Heat exposure</h3>
                 <p className="type-body mt-3 text-ink/60">
                   The contrast between cold and heat is where the magic happens. Heat exposure through sauna or warm-up sessions increases heart rate, promotes blood flow, and triggers heat shock proteins that repair damaged cells. Alternating between hot and cold creates a cardiovascular workout that strengthens your heart and immune system.
@@ -117,7 +117,7 @@ export default function DipsPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Breathwork</h3>
                 <p className="type-body mt-3 text-ink/60">
                   Controlled breathing is the bridge between mind and body. Before every dip, we practice techniques that oxygenate your blood, calm your nervous system, and prepare you to stay present in the cold. Breathwork reduces cortisol, improves focus, and gives you a tool you can use long after the session ends — in stressful meetings, difficult conversations, or sleepless nights.

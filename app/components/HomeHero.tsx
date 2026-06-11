@@ -50,7 +50,7 @@ export default function HomeHero({
             revealed ? "scale-100 opacity-100" : "scale-105 opacity-0",
           ].join(" ")}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
 
         {/* Text content */}
         <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
@@ -58,17 +58,9 @@ export default function HomeHero({
             <h1 className={["type-display text-white", stagger("delay-300")].join(" ")}>
               Reset. Your. Mind.
             </h1>
-            <p className={["type-title mt-4 text-white/85", stagger("delay-500")].join(" ")}>
-              Seek discomfort. Find yourself.
-            </p>
-            <p
-              className={[
-                "type-body mt-3 max-w-md text-white/65",
-                stagger("delay-[600ms]"),
-              ].join(" ")}
-            >
-              Amsterdam&apos;s urban wellness community. Ice baths, breathwork, and
-              outdoor adventures for those who choose growth over comfort.
+            <p className={["type-title mt-4 max-w-xl text-white/85", stagger("delay-500")].join(" ")}>
+              Amsterdam&apos;s social adventure community focused on reconnecting
+              with nature.
             </p>
             <div className={["mt-7 flex flex-wrap gap-3", stagger("delay-700")].join(" ")}>
               <Button href={SITE.whatsapp} variant="primary">

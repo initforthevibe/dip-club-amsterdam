@@ -25,15 +25,31 @@ export default function Footer() {
                 href={SITE.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/20 py-1.5 pl-5 pr-1.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
               >
-                Instagram <span aria-hidden="true">↗</span>
+                Instagram
+                <span
+                  aria-hidden="true"
+                  className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 transition-transform duration-300 group-hover:-rotate-45"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/20 py-1.5 pl-5 pr-1.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
               >
-                {SITE.email} <span aria-hidden="true">↗</span>
+                {SITE.email}
+                <span
+                  aria-hidden="true"
+                  className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 transition-transform duration-300 group-hover:-rotate-45"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </a>
               <p className="type-micro mt-4 max-w-xs text-white/40">
                 Made with cold hands and warm hearts in Amsterdam
@@ -60,7 +76,7 @@ export default function Footer() {
             alt="Dip Club Amsterdam"
             width={1200}
             height={400}
-            className="mt-16 h-auto w-full opacity-90"
+            className="mx-auto mt-16 h-auto w-3/4"
           />
 
           {/* Bottom bar */}
