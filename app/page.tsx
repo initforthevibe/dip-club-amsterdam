@@ -115,7 +115,6 @@ export default function Home() {
                 imageSrc="/media/dc-biweekly-dip.jpg"
                 imageAlt="Community members during a cold water dip in Amsterdam"
                 href="/dips"
-                accentColor="bg-blue"
               />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -126,7 +125,6 @@ export default function Home() {
                 imageSrc="/media/dc-quarterly-excursion.JPG"
                 imageAlt="Dip Club group on a hiking excursion"
                 href="/excursions"
-                accentColor="bg-green"
               />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
@@ -137,7 +135,6 @@ export default function Home() {
                 imageSrc="/media/dc-annual-adventure-2.JPG"
                 imageAlt="Dip Club adventure hike in the mountains"
                 href="/adventures"
-                accentColor="bg-terracotta"
               />
             </ScrollReveal>
           </div>
