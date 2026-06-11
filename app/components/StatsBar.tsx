@@ -5,18 +5,16 @@ type StatsBarProps = { stats: Stat[] };
 
 export default function StatsBar({ stats }: StatsBarProps) {
   return (
-    <section className="bg-offwhite py-16 lg:py-20 border-y border-dark/5">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-3 gap-8">
+    <section className="bg-paper py-16 lg:py-20">
+      <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
+        <div className="grid grid-cols-3 gap-8 border-y border-ink/10 py-10 lg:py-14">
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={i * 0.1}>
-              <div className="text-center">
-                <p className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark">
+              <div>
+                <p className="text-5xl font-medium tracking-[-0.02em] sm:text-6xl lg:text-7xl">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate">
-                  {stat.label}
-                </p>
+                <p className="type-micro mt-3 text-ink/45">{stat.label}</p>
               </div>
             </ScrollReveal>
           ))}

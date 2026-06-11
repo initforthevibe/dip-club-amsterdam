@@ -1,24 +1,15 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
-  weight: "800",
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const playfairDisplay = Playfair_Display({
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  subsets: ["latin"],
+const switzer = localFont({
+  src: "./fonts/Switzer-Variable.woff2",
+  variable: "--font-switzer",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,10 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${inter.variable} ${playfairDisplay.variable}`}
-    >
+    <html lang="en" className={switzer.variable}>
       <body>
         <Navbar />
         {children}

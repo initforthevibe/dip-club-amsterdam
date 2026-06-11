@@ -25,10 +25,10 @@ export default function FieldNotesList({ posts }: { posts: FieldNoteMeta[] }) {
         <button
           onClick={() => setActive(null)}
           className={[
-            "px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] border-2 border-dark transition-colors duration-200",
+            "rounded-full px-4 py-2 text-xs font-medium transition-colors duration-200",
             active === null
-              ? "bg-dark text-offwhite"
-              : "bg-transparent text-dark hover:bg-dark/5",
+              ? "bg-ink text-white"
+              : "bg-mist text-ink hover:bg-ink/10",
           ].join(" ")}
         >
           All
@@ -38,10 +38,10 @@ export default function FieldNotesList({ posts }: { posts: FieldNoteMeta[] }) {
             key={pillar}
             onClick={() => setActive(pillar === active ? null : pillar)}
             className={[
-              "px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] border-2 border-dark transition-colors duration-200",
+              "rounded-full px-4 py-2 text-xs font-medium transition-colors duration-200",
               active === pillar
-                ? "bg-dark text-offwhite"
-                : "bg-transparent text-dark hover:bg-dark/5",
+                ? "bg-ink text-white"
+                : "bg-mist text-ink hover:bg-ink/10",
             ].join(" ")}
           >
             {pillar}
@@ -51,7 +51,7 @@ export default function FieldNotesList({ posts }: { posts: FieldNoteMeta[] }) {
 
       {/* Card grid */}
       {filtered.length === 0 ? (
-        <p className="text-slate">No posts for this pillar yet.</p>
+        <p className="type-body text-ink/60">No posts for this pillar yet.</p>
       ) : (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((post) => (

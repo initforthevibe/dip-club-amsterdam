@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Hero from "../components/Hero";
 import ScrollReveal from "../components/ScrollReveal";
-import WaveDivider from "../components/WaveDivider";
+import MediaFrame from "../components/ui/MediaFrame";
+import JoinPanel from "../components/JoinPanel";
 
 export const metadata: Metadata = {
   title: "Adventures — Dip Club Amsterdam",
@@ -14,28 +14,26 @@ export default function AdventuresPage() {
   return (
     <>
       {/* Hero */}
-      <Hero title="ADVENTURES" subtitle="Long-distance hikes across Europe" badge="Once a year" />
+      <Hero title="Adventures." subtitle="Long-distance hikes across Europe" badge="Once a year" />
 
       {/* Overview section 1 — Text left, Image right */}
-      <section className="bg-offwhite py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
             {/* Left: text */}
             <ScrollReveal className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-4">
-                What to expect
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight">
-                Long-distance hikes that push your limits
+              <p className="type-micro mb-5 text-ink/45">What to expect</p>
+              <h2 className="type-statement">
+                Long-distance hikes that push your limits.
               </h2>
-              <p className="mt-6 text-base leading-relaxed text-slate">
+              <p className="type-body mt-6 text-ink/60">
                 Once a year, we go big. The annual Dip Club adventure is a long-distance
                 hike across some of Europe&apos;s most stunning landscapes — up to 12 days
                 of trails, mountain passes, wild swimming, and shared experiences. Past
                 adventures have taken us through the Dolomites and along the coast of
                 South Africa.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-slate">
+              <p className="type-body mt-4 text-ink/60">
                 This is where the deepest bonds are formed. Day after day on the trail
                 together, you&apos;ll return home exhausted, inspired, and with a group
                 of people who now feel like family.
@@ -44,32 +42,25 @@ export default function AdventuresPage() {
 
             {/* Right: image */}
             <ScrollReveal delay={0.2} className="flex-1">
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
-                <Image
-                  src="/media/dc-annual-adventure-2.JPG"
-                  alt="Dip Club Amsterdam annual adventure"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-annual-adventure-2.JPG"
+                alt="Dip Club Amsterdam annual adventure"
+                className="h-[300px] sm:h-[400px]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Overview section 2 — Image left, Text right */}
-      <section className="bg-offwhite py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <div className="flex flex-col gap-12 lg:flex-row-reverse lg:items-center lg:gap-20">
             {/* Right: text (rendered first in DOM, flex-row-reverse visually puts it right) */}
             <ScrollReveal className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-4">
-                The details
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight">
-                What an adventure looks like
-              </h2>
+              <p className="type-micro mb-5 text-ink/45">The details</p>
+              <h2 className="type-statement">What an adventure looks like.</h2>
               <ul className="mt-6 space-y-4">
                 {[
                   "Duration: 7-12 days of continuous hiking",
@@ -79,9 +70,9 @@ export default function AdventuresPage() {
                   "Travel: Trains and buses where possible — we keep it local",
                   "Cost: Shared expenses — transport, accommodation, and food",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-base text-slate">
-                    <span className="h-2 w-2 flex-shrink-0 rounded-none bg-terracotta" />
-                    {item}
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="h-2 w-2 flex-shrink-0 rounded-full bg-ink/20" />
+                    <span className="type-body text-ink/60">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -89,59 +80,47 @@ export default function AdventuresPage() {
 
             {/* Left: image */}
             <ScrollReveal delay={0.2} className="flex-1">
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
-                <Image
-                  src="/media/dc-polaroid-4-dolomites-hike.jpg"
-                  alt="Dolomites hike adventure"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-4-dolomites-hike.jpg"
+                alt="Dolomites hike adventure"
+                className="h-[300px] sm:h-[400px]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Why it works — exercise, nature, connection */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-4">
-              Why long-distance hiking transforms you
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight mb-12">
-              Days on the trail change{" "}
-              <span className="font-accent italic">everything</span>
+            <p className="type-micro mb-5 text-ink/45">Why long-distance hiking transforms you</p>
+            <h2 className="type-statement mb-12">
+              Days on the trail change everything.
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px bg-dark/10 sm:grid-cols-3 rounded-sm overflow-hidden border border-dark/10">
+          <div className="grid gap-px border-y border-ink/10 bg-ink/10 sm:grid-cols-3">
             <ScrollReveal delay={0}>
-              <div className="bg-offwhite p-6 lg:p-8 h-full">
-                <h3 className="font-heading text-base font-extrabold uppercase tracking-wide">
-                  Sustained Exercise
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+                <h3 className="type-title">Sustained exercise</h3>
+                <p className="type-body mt-3 text-ink/60">
                   Walking 15-25 km per day for a week straight does something no gym session can. Your body adapts, your endurance builds, and your relationship with physical effort fundamentally shifts. Long-distance hiking improves cardiovascular health, strengthens joints, and triggers deep recovery cycles that leave you fitter than when you started.
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <div className="bg-offwhite p-6 lg:p-8 h-full">
-                <h3 className="font-heading text-base font-extrabold uppercase tracking-wide">
-                  Deep Time in Nature
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+                <h3 className="type-title">Deep time in nature</h3>
+                <p className="type-body mt-3 text-ink/60">
                   A weekend in nature is refreshing. A week is transformative. After a few days, your cortisol drops, your sleep deepens, and your senses sharpen. You start hearing birdsong, smelling rain before it arrives, and noticing how light changes through the day. Extended time outdoors recalibrates your nervous system in ways that persist long after you return home.
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
-              <div className="bg-offwhite p-6 lg:p-8 h-full">
-                <h3 className="font-heading text-base font-extrabold uppercase tracking-wide">
-                  Connection Through Effort
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+                <h3 className="type-title">Connection through effort</h3>
+                <p className="type-body mt-3 text-ink/60">
                   There&apos;s a reason soldiers, athletes, and explorers form the strongest bonds — shared adversity creates trust faster than anything else. Hiking through rain, sharing a meal after a hard day, helping each other up a mountain pass. These aren&apos;t activities. They&apos;re the foundation of real friendship. People come home from our adventures with relationships that last years.
                 </p>
               </div>
@@ -151,17 +130,15 @@ export default function AdventuresPage() {
       </section>
 
       {/* How to prepare */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-20">
             <ScrollReveal className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-4">
-                Preparation
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight">
-                How to prepare for a long-distance hike
+              <p className="type-micro mb-5 text-ink/45">Preparation</p>
+              <h2 className="type-statement">
+                How to prepare for a long-distance hike.
               </h2>
-              <p className="mt-6 text-base leading-relaxed text-slate">
+              <p className="type-body mt-6 text-ink/60">
                 You don&apos;t need to be an athlete. You need to be willing to prepare. We share a full training guide 3 months before each adventure, but here&apos;s the foundation.
               </p>
             </ScrollReveal>
@@ -175,9 +152,9 @@ export default function AdventuresPage() {
                   "Practice elevation: If possible, find hills. Stairs work too. Your legs need to know what climbing feels like.",
                   "Rest and recover: Don't overtrain the final 2 weeks. Arrive rested, not exhausted.",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-base text-slate">
-                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-none bg-terracotta" />
-                    {item}
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-ink/20" />
+                    <span className="type-body text-ink/60">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -187,82 +164,45 @@ export default function AdventuresPage() {
       </section>
 
       {/* Photo gallery */}
-      <section className="bg-offwhite py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <h2 className="font-heading text-3xl font-extrabold mb-12">
-              From our adventures
-            </h2>
+            <h2 className="type-statement mb-12">From our adventures.</h2>
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-3">
             <ScrollReveal delay={0.1}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
-                <Image
-                  src="/media/dc-polaroid-2-dolomites-hike.jpg"
-                  alt="Dolomites hike"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-2-dolomites-hike.jpg"
+                alt="Dolomites hike"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
-                <Image
-                  src="/media/dc-polaroid-3-south-africa-hike.jpg"
-                  alt="South Africa hike"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-3-south-africa-hike.jpg"
+                alt="South Africa hike"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
-                <Image
-                  src="/media/IMG_6342.jpg"
-                  alt="Adventure photo"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/IMG_6342.jpg"
+                alt="Adventure photo"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* CTA section */}
-      <WaveDivider topColor="#e8e5e2" bottomColor="#f06530" />
-      <section className="bg-terracotta py-24 lg:py-32 text-center">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
-          <ScrollReveal>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
-              Ready for the adventure of a lifetime?
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-base text-white/80">
-              Sign up for the next trip or join our community to be the first to know
-              when registrations open.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row sm:justify-center items-center gap-4">
-              <a
-                href="#"
-                className="inline-block rounded-none bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
-              >
-                Sign Up for Next Adventure ↘
-              </a>
-              <a
-                href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-none border-2 border-white text-white px-8 py-3.5 text-sm font-semibold hover:bg-offwhite hover:text-dark transition-all"
-              >
-                Join WhatsApp
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* CTA */}
+      <JoinPanel
+        title="Ready for the adventure of a lifetime?"
+        body="Sign up for the next trip or join our community to be the first to know when registrations open."
+      />
     </>
   );
 }

@@ -19,13 +19,19 @@ Deploy: `git push` to main → Vercel auto-deploys. No separate deploy step need
 - WhatsApp join link is the **primary conversion CTA** on every page — don't remove or bury it.
 - `ScrollReveal` uses `IntersectionObserver` — add `"use client"` to any component using it.
 - **React 19** required — next-mdx-remote@6 needs React 19 to work with Next.js 15 RSC rendering.
+- Switzer loads via `next/font/local` from `app/fonts/` — no Google Fonts, no `<link>` tags
 
 ## Design Constraints (non-negotiable)
 
-- Dark background `#0e0e0e`, yellow `#FFE034` accent, red `#E8372A` for danger elements
-- Display font: Anton SC (Google Fonts, loaded via next/font); body: Fredoka
-- Load all Google Fonts via `next/font/google` in `layout.tsx` — no `<link>` tags
-- Keep page.tsx clean: imports + section composition only, no JSX logic in the root page
+Design system spec: `docs/superpowers/specs/2026-06-11-design-system-design.md` ("Framed Minimal").
+
+- Canvas: white `#FFFFFF` (paper), text near-black `#0D0D0D` (ink), secondary fills `#F0EFED` (mist)
+- Terracotta `#F06530` appears ONLY on the primary CTA (WhatsApp join) — never as decoration
+- One typeface: Switzer (self-hosted via next/font/local, `app/fonts/`) — five type roles as `type-display/statement/title/body/micro` utilities in globals.css
+- Media always sits in rounded frames: `rounded-frame` (20px) / `rounded-card` (12px); heroes are inset 8px/16px from the viewport via MediaFrame pattern
+- Buttons are pills — use `app/components/ui/Button`, never hand-rolled
+- Compose pages from `app/components/ui/` primitives (Button, MediaFrame, UtilityCard, StatementBlock, SectionPanel) + JoinPanel
+- Display headlines are sentence case with periods ("Reset. Your. Mind.")
 
 ## Structure
 
@@ -37,6 +43,7 @@ app/
   field-notes/        → blog listing + [slug] post pages
 lib/
   field-notes.ts      → getAllPosts(), getPostBySlug() — data utilities
+  site.ts            → SITE constants — external links (WhatsApp/Instagram/email) always come from here
 content/
   field-notes/        → .mdx blog posts (frontmatter: title, date, pillars, excerpt, coverImage)
 ```

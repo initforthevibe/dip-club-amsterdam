@@ -13,3 +13,6 @@ out/
 *.HEIC
 *.heic
 .env*.local
+
+# Brainstorming visual companion sessions
+.superpowers/

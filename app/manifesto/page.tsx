@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "../components/Hero";
 import ScrollReveal from "../components/ScrollReveal";
+import JoinPanel from "../components/JoinPanel";
 
 export const metadata: Metadata = {
   title: "Manifesto — Dip Club Amsterdam",
@@ -11,16 +12,14 @@ export const metadata: Metadata = {
 export default function ManifestoPage() {
   return (
     <main>
-      <Hero title="MANIFESTO" subtitle="Why we exist" />
+      <Hero title="Manifesto." subtitle="Why we exist" />
 
       {/* The manifesto statement */}
-      <section className="bg-offwhite py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[820px] px-6 lg:px-12">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta mb-8">
-              Our Belief
-            </p>
-            <div className="space-y-6 text-xl sm:text-2xl leading-relaxed font-medium text-dark">
+            <p className="type-micro mb-8 text-ink/45">Our belief</p>
+            <div className="space-y-6 text-xl sm:text-2xl leading-relaxed font-medium text-ink">
               <p>
                 True wellbeing does not come from optimizing yourself. It comes from
                 being with others. From moving your body through landscapes that existed
@@ -41,14 +40,13 @@ export default function ManifestoPage() {
       </section>
 
       {/* The problem */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section className="bg-paper py-24 lg:py-32 border-t border-ink/10">
         <div className="mx-auto max-w-[820px] px-6 lg:px-12">
           <ScrollReveal>
-            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight mb-8">
-              The world we{" "}
-              <span className="font-accent italic">inherited</span>
+            <h2 className="type-statement mb-8">
+              The world we inherited.
             </h2>
-            <div className="space-y-5 text-base leading-relaxed text-slate">
+            <div className="space-y-5 type-body text-ink/60">
               <p>
                 We are living our lives through screens. We are fed information by
                 algorithms that thrive on negative emotions — outrage, envy, anxiety.
@@ -72,15 +70,13 @@ export default function ManifestoPage() {
       </section>
 
       {/* What we believe — expanded pillars */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section className="bg-paper py-24 lg:py-32 border-t border-ink/10">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold leading-tight mb-16">
-              What we stand for
-            </h2>
+            <h2 className="type-statement mb-16">What we stand for.</h2>
           </ScrollReveal>
 
-          <div className="space-y-16">
+          <div className="space-y-0 divide-y divide-ink/10 border-y border-ink/10">
             {[
               {
                 title: "Connection is physical",
@@ -106,14 +102,14 @@ export default function ManifestoPage() {
                 title: "We are one connected system",
                 body: "The water you swim in feeds the fields that grow your food. The forest you hike through cleans the air you breathe. The person you share a meal with carries a story that will change how you see the world. Nothing exists in isolation. Realising this — not intellectually, but in your body, through experience — is what Dip Club is really about.",
               },
-            ].map((section, i) => (
-              <ScrollReveal key={section.title} delay={i * 0.05}>
-                <div className="flex flex-col gap-4 lg:flex-row lg:gap-16">
-                  <h3 className="font-heading text-xl font-extrabold uppercase tracking-wide lg:w-[280px] lg:flex-shrink-0">
-                    {section.title}
+            ].map((principle, i) => (
+              <ScrollReveal key={principle.title} delay={i * 0.05}>
+                <div className="flex flex-col gap-4 py-10 lg:flex-row lg:gap-16">
+                  <h3 className="type-title lg:w-[280px] lg:flex-shrink-0">
+                    {principle.title}
                   </h3>
-                  <p className="text-base leading-relaxed text-slate flex-1">
-                    {section.body}
+                  <p className="type-body text-ink/60 flex-1">
+                    {principle.body}
                   </p>
                 </div>
               </ScrollReveal>
@@ -123,10 +119,10 @@ export default function ManifestoPage() {
       </section>
 
       {/* The invitation */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section className="bg-paper py-24 lg:py-32 border-t border-ink/10">
         <div className="mx-auto max-w-[820px] px-6 lg:px-12">
           <ScrollReveal>
-            <div className="space-y-6 text-xl sm:text-2xl leading-relaxed font-medium text-dark">
+            <div className="space-y-6 text-xl sm:text-2xl leading-relaxed font-medium text-ink">
               <p>
                 We are not asking you to abandon your life. We are asking you to step
                 outside of it — at least once a year — and remember what you are made of.
@@ -136,7 +132,7 @@ export default function ManifestoPage() {
                 algorithms. Just the world as it actually is, and people who want to
                 experience it together.
               </p>
-              <p className="text-terracotta">
+              <p className="text-ink/45">
                 That is what Dip Club is for.
               </p>
             </div>
@@ -145,27 +141,10 @@ export default function ManifestoPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-terracotta py-24 lg:py-32 text-center">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
-          <ScrollReveal>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
-              Disconnect. Reconnect.
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-base text-white/80">
-              Join a community of people who believe that the best things in life
-              happen outside, together.
-            </p>
-            <a
-              href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-none bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
-            >
-              Join WhatsApp Community ↘
-            </a>
-          </ScrollReveal>
-        </div>
-      </section>
+      <JoinPanel
+        title="Disconnect. Reconnect."
+        body="Join a community of people who believe that the best things in life happen outside, together."
+      />
     </main>
   );
 }
