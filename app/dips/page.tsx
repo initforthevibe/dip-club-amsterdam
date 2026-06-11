@@ -170,31 +170,30 @@ export default function DipsPage() {
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-2">
             <ScrollReveal delay={0}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/dc-polaroid-1-amstel-dip.JPG"
-                  alt="Amstel dip session"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-1-amstel-dip.JPG"
+                alt="Amstel dip session"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/IMG_2377.jpg"
-                  alt="Dip Club community gathering"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/IMG_2377.jpg"
+                alt="Dip Club community gathering"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <JoinPanel title="Ready for your first dip?" />
+      <JoinPanel
+        title="Ready for your first dip?"
+        body="Join our WhatsApp group to hear about the next session. We'll see you in the water."
+      />
     </>
   );
 }

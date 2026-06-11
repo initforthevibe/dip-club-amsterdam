@@ -171,34 +171,28 @@ export default function AdventuresPage() {
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-3">
             <ScrollReveal delay={0.1}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/dc-polaroid-2-dolomites-hike.jpg"
-                  alt="Dolomites hike"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-2-dolomites-hike.jpg"
+                alt="Dolomites hike"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/dc-polaroid-3-south-africa-hike.jpg"
-                  alt="South Africa hike"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/dc-polaroid-3-south-africa-hike.jpg"
+                alt="South Africa hike"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/IMG_6342.jpg"
-                  alt="Adventure photo"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/IMG_6342.jpg"
+                alt="Adventure photo"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
             </ScrollReveal>
           </div>
         </div>

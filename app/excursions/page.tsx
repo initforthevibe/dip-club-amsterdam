@@ -141,24 +141,20 @@ export default function ExcursionsPage() {
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-2">
             <ScrollReveal delay={0}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/IMG_4961.jpg"
-                  alt="Excursion photo"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/IMG_4961.jpg"
+                alt="Excursion photo"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-frame">
-                <MediaFrame
-                  src="/media/IMG_5026.jpg"
-                  alt="Excursion group activity"
-                  className="aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
+              <MediaFrame
+                src="/media/IMG_5026.jpg"
+                alt="Excursion group activity"
+                className="aspect-[4/3]"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
             </ScrollReveal>
           </div>
         </div>
