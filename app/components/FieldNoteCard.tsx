@@ -19,7 +19,7 @@ export default function FieldNoteCard({ post }: { post: FieldNoteMeta }) {
           src={post.coverImage}
           alt={post.title}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>

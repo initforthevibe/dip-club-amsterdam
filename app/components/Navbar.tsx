@@ -80,7 +80,7 @@ export default function Navbar() {
           >
             <Link href="/" className="flex-shrink-0">
               <Image
-                src={menuOpen ? "/brand-assets/dip-club-logo-blue.svg" : "/brand-assets/dipclub-logo-white.svg"}
+                src={menuOpen ? "/brand-assets/dip-club-logo-ink.svg" : "/brand-assets/dipclub-logo-white.svg"}
                 alt="Dip Club Amsterdam"
                 width={140}
                 height={40}

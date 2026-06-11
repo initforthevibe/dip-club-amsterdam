@@ -35,12 +35,13 @@ export default async function FieldNotePostPage({ params }: Props) {
 
   return (
     <main>
-      {/* Cover image — pt clears fixed navbar */}
-      <div className="bg-paper p-2 pt-20 lg:p-4 lg:pt-24">
+      {/* Cover image — extends under fixed navbar; overlay keeps nav text legible */}
+      <div className="bg-paper p-2 lg:p-4">
         <MediaFrame
           src={post.coverImage}
           alt={post.title}
-          className="h-[400px]"
+          className="h-[420px] sm:h-[480px]"
+          overlay
           priority
           sizes="100vw"
         />
