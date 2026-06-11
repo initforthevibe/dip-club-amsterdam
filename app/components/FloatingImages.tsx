@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export type FloatingImage = {
@@ -16,21 +16,38 @@ type FloatingImagesProps = {
 };
 
 export default function FloatingImages({ images }: FloatingImagesProps) {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
-      setOffset({
+      setMouse({
         x: (e.clientX / window.innerWidth - 0.5) * 2,
         y: (e.clientY / window.innerHeight - 0.5) * 2,
       });
     };
+    // -1..1 as the section's center travels through the viewport
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const progress =
+        (rect.top + rect.height / 2 - window.innerHeight / 2) /
+        window.innerHeight;
+      setScroll(Math.max(-1, Math.min(1, progress)));
+    };
+    handleScroll();
     window.addEventListener("mousemove", handleMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <div
+      ref={ref}
       className="pointer-events-none absolute inset-0 hidden lg:block"
       aria-hidden="true"
     >
@@ -39,7 +56,10 @@ export default function FloatingImages({ images }: FloatingImagesProps) {
           key={img.src}
           className={`absolute overflow-hidden rounded-[8px] ${img.position}`}
           style={{
-            transform: `translate(${(offset.x * img.depth).toFixed(1)}px, ${(offset.y * img.depth).toFixed(1)}px)`,
+            transform: `translate(${(mouse.x * img.depth).toFixed(1)}px, ${(
+              mouse.y * img.depth +
+              scroll * img.depth * -2
+            ).toFixed(1)}px)`,
             transition: "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >

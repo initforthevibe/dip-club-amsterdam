@@ -92,9 +92,9 @@ export default function AboutPage() {
               Not a fitness club. Not a wellness brand.
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px border-y border-ink/10 bg-ink/10 sm:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-3">
             <ScrollReveal delay={0}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">No prerequisites</h3>
                 <p className="type-body mt-3 text-ink/60">
                   You don&apos;t need to be fit, experienced, or brave. You need to be
@@ -104,7 +104,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">All backgrounds</h3>
                 <p className="type-body mt-3 text-ink/60">
                   Our members come from everywhere — different countries, professions, and
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Real connection</h3>
                 <p className="type-body mt-3 text-ink/60">
                   This isn&apos;t networking with a wellness veneer. The friendships that

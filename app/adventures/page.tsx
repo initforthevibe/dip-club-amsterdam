@@ -100,9 +100,9 @@ export default function AdventuresPage() {
               Days on the trail change everything.
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px border-y border-ink/10 bg-ink/10 sm:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-3">
             <ScrollReveal delay={0}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Sustained exercise</h3>
                 <p className="type-body mt-3 text-ink/60">
                   Walking 15-25 km per day for a week straight does something no gym session can. Your body adapts, your endurance builds, and your relationship with physical effort fundamentally shifts. Long-distance hiking improves cardiovascular health, strengthens joints, and triggers deep recovery cycles that leave you fitter than when you started.
@@ -110,7 +110,7 @@ export default function AdventuresPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Deep time in nature</h3>
                 <p className="type-body mt-3 text-ink/60">
                   A weekend in nature is refreshing. A week is transformative. After a few days, your cortisol drops, your sleep deepens, and your senses sharpen. You start hearing birdsong, smelling rain before it arrives, and noticing how light changes through the day. Extended time outdoors recalibrates your nervous system in ways that persist long after you return home.
@@ -118,7 +118,7 @@ export default function AdventuresPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
-              <div className="bg-paper px-1 py-8 lg:pr-6 h-full">
+              <div className="border-t border-ink/20 pt-5 h-full">
                 <h3 className="type-title">Connection through effort</h3>
                 <p className="type-body mt-3 text-ink/60">
                   There&apos;s a reason soldiers, athletes, and explorers form the strongest bonds — shared adversity creates trust faster than anything else. Hiking through rain, sharing a meal after a hard day, helping each other up a mountain pass. These aren&apos;t activities. They&apos;re the foundation of real friendship. People come home from our adventures with relationships that last years.

@@ -105,7 +105,7 @@ export default function ExcursionsPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.1}>
-              <div className="grid gap-px border-y border-ink/10 bg-ink/10">
+              <div className="grid gap-y-10">
                 {[
                   {
                     title: "Flora & fauna",
@@ -121,7 +121,7 @@ export default function ExcursionsPage() {
                   },
                 ].map((item, i) => (
                   <ScrollReveal key={item.title} delay={0.1 + i * 0.08}>
-                    <div className="bg-paper px-1 py-8 lg:pr-6">
+                    <div className="border-t border-ink/20 pt-5">
                       <h3 className="type-title">{item.title}</h3>
                       <p className="type-body mt-2 text-ink/60">{item.text}</p>
                     </div>
