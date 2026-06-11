@@ -13,10 +13,10 @@ export default function FieldNotesPage() {
   return (
     <main>
       <Hero
-        title="FIELD NOTES"
+        title="Field notes."
         subtitle="Stories from the water, the trail, and the wild"
       />
-      <section className="bg-offwhite py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <FieldNotesList posts={posts} />
         </div>

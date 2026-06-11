@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/field-notes";
 import { mdxComponents } from "../../components/mdx-components";
+import MediaFrame from "../../components/ui/MediaFrame";
+import SectionPanel from "../../components/ui/SectionPanel";
+import Button from "../../components/ui/Button";
+import { SITE } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -32,66 +35,57 @@ export default async function FieldNotePostPage({ params }: Props) {
 
   return (
     <main>
-      {/* Cover image — sits below fixed navbar (72px) */}
-      <div className="relative w-full h-[400px] mt-[72px]">
-        <Image
+      {/* Cover image — pt clears fixed navbar */}
+      <div className="bg-paper p-2 pt-20 lg:p-4 lg:pt-24">
+        <MediaFrame
           src={post.coverImage}
           alt={post.title}
-          fill
-          className="object-cover"
+          className="h-[400px]"
           priority
           sizes="100vw"
         />
       </div>
 
-      <article className="bg-offwhite py-16 lg:py-24">
+      <article className="bg-paper py-16 lg:py-24">
         <div className="mx-auto max-w-[820px] px-6 lg:px-12">
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             {post.pillars.map((pillar) => (
               <span
                 key={pillar}
-                className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta"
+                className="type-micro text-ink/45"
               >
                 {pillar}
               </span>
             ))}
-            <span className="text-xs text-slate">{displayDate}</span>
+            <span className="type-micro text-ink/45">{displayDate}</span>
           </div>
 
           {/* Title */}
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-10">
-            {post.title}
-          </h1>
+          <h1 className="type-statement mb-10">{post.title}</h1>
 
           {/* MDX body */}
           <MDXRemote source={post.content} components={mdxComponents} />
 
           {/* Footer */}
-          <div className="mt-16 pt-8 border-t border-dark/10 flex flex-col gap-8">
+          <div className="mt-16 pt-8 border-t border-ink/10 flex flex-col gap-8">
             <Link
               href="/field-notes"
-              className="text-sm font-semibold text-terracotta hover:text-terracotta-dark transition-colors"
+              className="text-sm font-medium text-ink/60 hover:text-ink transition-colors"
             >
               ← Back to Field Notes
             </Link>
-            <div className="rounded-none border-[6px] border-terracotta bg-terracotta p-8 text-white">
-              <h2 className="font-heading text-xl font-extrabold">
-                Join the community
-              </h2>
-              <p className="mt-2 text-sm text-white/80">
-                Be the first to know about upcoming dips, excursions, and
-                adventures.
+            <SectionPanel tone="dark">
+              <h2 className="type-title">Join the community</h2>
+              <p className="type-body mt-2 text-white/65">
+                Be the first to know about upcoming dips, excursions, and adventures.
               </p>
-              <a
-                href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block bg-offwhite px-8 py-3 text-sm font-semibold text-dark hover:bg-offwhite/90 transition-all"
-              >
-                Join WhatsApp ↘
-              </a>
-            </div>
+              <div className="mt-6">
+                <Button href={SITE.whatsapp} variant="primary">
+                  Join the WhatsApp community
+                </Button>
+              </div>
+            </SectionPanel>
           </div>
         </div>
       </article>

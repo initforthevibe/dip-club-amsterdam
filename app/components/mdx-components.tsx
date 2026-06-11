@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <blockquote className="my-8 border-l-4 border-terracotta pl-6 font-accent italic text-xl text-terracotta leading-relaxed">
+    <blockquote className="my-8 border-l-2 border-ink/20 pl-6 type-statement text-ink">
       {children}
     </blockquote>
   );
@@ -10,7 +10,7 @@ export function PullQuote({ children }: { children: React.ReactNode }) {
 
 export function Callout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-6 border-l-4 border-dark bg-[#FFE034] px-6 py-4 text-dark">
+    <div className="my-6 rounded-card bg-mist px-6 py-4 text-ink">
       {children}
     </div>
   );
@@ -27,7 +27,7 @@ export function PhotoGallery({ images }: { images: GalleryImage[] }) {
     <div className={`my-8 grid gap-4 ${cols}`}>
       {images.map((img) => (
         <figure key={img.src} className="flex flex-col gap-2">
-          <div className="relative aspect-[4/3] overflow-hidden">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[8px]">
             <Image
               src={img.src}
               alt={img.alt}
@@ -37,7 +37,7 @@ export function PhotoGallery({ images }: { images: GalleryImage[] }) {
             />
           </div>
           {img.caption && (
-            <figcaption className="text-xs text-slate text-center">
+            <figcaption className="type-micro text-ink/45 text-center">
               {img.caption}
             </figcaption>
           )}
@@ -53,52 +53,52 @@ export const mdxComponents = {
   PhotoGallery,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className="font-heading text-3xl font-extrabold mt-10 mb-4"
+      className="type-statement mt-10 mb-4"
       {...props}
     />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="font-heading text-2xl font-extrabold mt-8 mb-3"
+      className="type-title text-2xl mt-8 mb-3"
       {...props}
     />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="font-heading text-xl font-extrabold mt-6 mb-2"
+      className="type-title mt-6 mb-2"
       {...props}
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-base leading-relaxed text-slate mb-5" {...props} />
+    <p className="type-body text-ink/70 mb-5" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
-      className="list-disc list-outside ml-5 space-y-1.5 text-slate mb-5"
+      className="list-disc list-outside ml-5 space-y-1.5 type-body text-ink/70 mb-5"
       {...props}
     />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className="list-decimal list-outside ml-5 space-y-1.5 text-slate mb-5"
+      className="list-decimal list-outside ml-5 space-y-1.5 type-body text-ink/70 mb-5"
       {...props}
     />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
-      className="border-l-4 border-dark/20 pl-5 italic text-slate my-6"
+      className="border-l-2 border-ink/15 pl-5 text-ink/60 my-6"
       {...props}
     />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className="bg-dark/5 px-1.5 py-0.5 text-sm font-mono"
+      className="bg-mist rounded-[4px] px-1.5 py-0.5 text-sm font-mono"
       {...props}
     />
   ),
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className="bg-dark/5 p-4 overflow-x-auto text-sm font-mono my-6"
+      className="bg-mist rounded-card p-4 overflow-x-auto text-sm font-mono my-6"
       {...props}
     />
   ),
