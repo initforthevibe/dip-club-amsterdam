@@ -88,12 +88,12 @@ export default function Home() {
         <SwervingLines />
         <FloatingImages
           images={[
-            { src: "/media/dc-polaroid-1-amstel-dip.JPG", position: "left-[5%] top-[8%] w-32 aspect-[4/5]", depth: 18 },
-            { src: "/media/dc-polaroid-6-amstel-dip-flip.jpg", position: "left-[14%] bottom-[12%] w-40 aspect-[5/4]", depth: 10 },
+            { src: "/media/dc-polaroid-1-amstel-dip.JPG", position: "left-[5%] top-[8%] w-32 aspect-square", depth: 18 },
+            { src: "/media/dc-polaroid-6-amstel-dip-flip.jpg", position: "left-[14%] bottom-[12%] w-40 aspect-square", depth: 10 },
             { src: "/media/dc-polaroid-3-south-africa-hike.jpg", position: "left-[30%] top-[14%] w-28 aspect-square", depth: 26 },
-            { src: "/media/dc-quarterly-excursion.JPG", position: "right-[28%] bottom-[8%] w-36 aspect-[4/3]", depth: 14 },
-            { src: "/media/dc-polaroid-4-dolomites-hike.jpg", position: "right-[8%] top-[10%] w-40 aspect-[4/3]", depth: 8 },
-            { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-[4/5]", depth: 22 },
+            { src: "/media/dc-quarterly-excursion.JPG", position: "right-[28%] bottom-[8%] w-36 aspect-square", depth: 14 },
+            { src: "/media/dc-polaroid-4-dolomites-hike.jpg", position: "right-[8%] top-[10%] w-40 aspect-square", depth: 8 },
+            { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-square", depth: 22 },
           ]}
         />
         <div className="relative mx-auto w-full max-w-[1320px] px-6 text-center lg:px-12">
