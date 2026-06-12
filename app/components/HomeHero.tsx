@@ -38,7 +38,13 @@ export default function HomeHero({
 
   return (
     <section className="bg-paper p-2 lg:p-4">
-      <div className="relative min-h-[560px] overflow-hidden rounded-frame h-[calc(100svh-16px)] lg:h-[calc(100svh-32px)]">
+      <div
+        className={[
+          "relative min-h-[560px] overflow-hidden rounded-frame h-[calc(100svh-16px)] lg:h-[calc(100svh-32px)]",
+          "transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+          revealed ? "scale-100" : "scale-[0.94]",
+        ].join(" ")}
+      >
         <Image
           src={backgroundImage}
           alt={backgroundAlt}
@@ -53,9 +59,12 @@ export default function HomeHero({
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
 
         {/* Text content */}
-        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
-          <div className="max-w-3xl">
-            <h1 className={["type-display text-white", stagger("delay-300")].join(" ")}>
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14 lg:pb-[106px]">
+          <div>
+            <h1
+              className={["type-display text-white lg:whitespace-nowrap", stagger("delay-300")].join(" ")}
+              style={{ fontSize: "clamp(4.2rem, 10vw, 9rem)", fontWeight: 550 }}
+            >
               Reset. Your. Mind.
             </h1>
             <p className={["type-title mt-4 max-w-xl text-white/85", stagger("delay-500")].join(" ")}>
