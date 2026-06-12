@@ -1,6 +1,9 @@
+import Link from "next/link";
 import HomeHero from "./components/HomeHero";
 import ActivityCard from "./components/ActivityCard";
+import FieldNoteCard from "./components/FieldNoteCard";
 import ScrollReveal from "./components/ScrollReveal";
+import DragScroller from "./components/ui/DragScroller";
 import StatsBar from "./components/StatsBar";
 import FloatingImages from "./components/FloatingImages";
 import StatementBlock from "./components/ui/StatementBlock";
@@ -39,7 +42,8 @@ const PILLARS = [
 ];
 
 export default function Home() {
-  const latestPost = getAllPosts()[0];
+  const posts = getAllPosts();
+  const latestPost = posts[0];
 
   return (
     <main>
@@ -161,6 +165,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Field Notes Section */}
+      <section className="bg-paper py-24 lg:py-32">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
+          <ScrollReveal>
+            <div className="mb-12 flex items-end justify-between gap-6">
+              <h2 className="type-statement">Field notes.</h2>
+              <Link
+                href="/field-notes"
+                className="type-micro shrink-0 text-ink/45 transition-colors hover:text-ink"
+              >
+                All field notes <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <DragScroller className="-mx-6 gap-6 px-6 pb-2 lg:-mx-12 lg:px-12">
+              {posts.map((post) => (
+                <div key={post.slug} className="flex w-[320px] shrink-0 sm:w-[380px]">
+                  <FieldNoteCard post={post} />
+                </div>
+              ))}
+            </DragScroller>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Stats Bar */}
       <StatsBar
         stats={[
@@ -207,9 +237,9 @@ export default function Home() {
       <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <SectionPanel tone="terracotta">
-              <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
-                <div className="flex-1">
+            <SectionPanel tone="terracotta" flush>
+              <div className="flex flex-col gap-2 lg:flex-row lg:items-stretch">
+                <div className="flex-1 p-6 sm:p-8 lg:p-12 lg:self-center">
                   <h2 className="type-statement">Join the community.</h2>
                   <p className="type-body mt-4 max-w-md text-white/80">
                     Be the first to know about upcoming dips, excursions, and
@@ -230,10 +260,10 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <MediaFrame
-                    src="/media/dc-polaroid-2-dolomites-hike.jpg"
-                    alt="Dip Club community hiking in the Dolomites"
+                    src="/media/dc-biweekly-dip.jpg"
+                    alt="Community members during a cold water dip in Amsterdam"
                     radius="card"
-                    className="h-[240px] lg:h-[300px]"
+                    className="h-[280px] lg:h-full lg:min-h-[400px]"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
