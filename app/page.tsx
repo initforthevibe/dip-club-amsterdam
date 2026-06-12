@@ -83,7 +83,8 @@ export default function Home() {
       </section>
 
       {/* Let's reconnect */}
-      <section className="relative overflow-hidden bg-paper py-32 lg:py-52">
+      {/* min-h matches the swerving-lines SVG aspect (786/1667 ≈ 47%) so the full artwork fits */}
+      <section className="relative flex min-h-[47vw] items-center overflow-hidden bg-paper py-32 lg:py-52">
         <SwervingLines />
         <FloatingImages
           images={[
@@ -95,7 +96,7 @@ export default function Home() {
             { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-[4/5]", depth: 22 },
           ]}
         />
-        <div className="relative mx-auto max-w-[1320px] px-6 text-center lg:px-12">
+        <div className="relative mx-auto w-full max-w-[1320px] px-6 text-center lg:px-12">
           <ScrollReveal>
             <h2 className="text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.025em]">
               Let&apos;s reconnect.
