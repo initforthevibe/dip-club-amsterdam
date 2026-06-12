@@ -13,7 +13,6 @@ const ACTIVITY_LINKS = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Manifesto", href: "/manifesto" },
   { label: "Activities", href: "/dips", children: ACTIVITY_LINKS },
