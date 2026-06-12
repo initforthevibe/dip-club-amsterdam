@@ -12,7 +12,7 @@ export default function FieldNoteCard({ post }: { post: FieldNoteMeta }) {
   return (
     <Link
       href={`/field-notes/${post.slug}`}
-      className="group flex flex-col rounded-card border border-ink/10 bg-paper p-3 transition-transform duration-200 hover:-translate-y-0.5"
+      className="group flex w-full flex-col rounded-card border border-ink/10 bg-paper p-3 transition-transform duration-200 hover:-translate-y-0.5"
     >
       <div className="relative h-48 overflow-hidden rounded-[8px]">
         <Image
