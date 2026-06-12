@@ -55,3 +55,15 @@ content/
 - Don't change section order without explicit instruction
 - All images via `next/image` with explicit width + height
 - Field Notes pillars must match exactly: Outdoor Swimming, Social Sauna, Breath Work, Hiking, Bushcraft
+
+## Project Board
+
+`docs/BOARD.md` is the engineering Kanban board for this repo (obsidian-kanban markdown format — columns are `##` headings, cards are `- [ ]` items).
+
+- **Card format:** verb-first title · one area tag (project-specific, e.g. #crm #website #portal #infra) · one type tag (#feat #fix #sec #opt #chore) · one priority tag (#p1 #p2 #p3) · optional trailing context: one-liner or repo-root path to a spec/plan.
+- **Session start:** read `docs/BOARD.md` and give a one-line status (cards In Progress, top of Up Next). Keep it brief in unrelated sessions.
+- **"Pick up a task":** take the top card of Up Next, move it to In Progress, then follow the repo's normal working rules (approach outline, approvals) before coding.
+- **Board edits travel with code:** starting or finishing a card means the board change goes in the same commit/PR as the code change.
+- **Capture, don't just mention:** any open task that surfaces mid-session — security issues, optimization ideas, deferred follow-ups, "we should..." moments — becomes a Backlog card in the same session. The board is the single list of open work in this repo; if it's not on the board, it doesn't exist.
+- **The user owns prioritization:** never reorder Up Next or promote Backlog → Up Next without explicit approval.
+- **Hygiene:** WIP limit 3 In Progress. Cards moved to Done get checked off (`- [x]`). Parked cards keep `— parked YYYY-MM-DD: reason`; never delete reasons. When Done holds cards older than ~a month (or 10+), propose a prune — git history is the archive.
