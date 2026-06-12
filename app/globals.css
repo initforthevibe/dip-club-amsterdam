@@ -61,13 +61,13 @@
   background-repeat: repeat;
 }
 
-/* Straight 45° rising lines — terracotta activity cards; density/stroke match bg-wavy-fine */
+/* Straight 45° rising lines — terracotta activity cards; whole-pixel stops keep spacing even */
 @utility bg-lines-diagonal {
   background-image: repeating-linear-gradient(
-    45deg,
+    135deg,
     transparent,
-    transparent 5.5px,
-    rgb(255 255 255 / 0.18) 5.5px,
-    rgb(255 255 255 / 0.18) 6px
+    transparent 6px,
+    rgb(255 255 255 / 0.16) 6px,
+    rgb(255 255 255 / 0.16) 7px
   );
 }

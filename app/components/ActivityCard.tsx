@@ -34,27 +34,48 @@ export default function ActivityCard({
           <p className="type-micro text-white/70">{frequency}</p>
           <h3 className="type-title mt-1 text-white">{title}</h3>
           <p className="type-body mt-2 flex-1 text-white/80">{description}</p>
-          {/* Visual button only — the whole card is the link, so this must not be an anchor */}
-          <span className="mt-5 inline-flex w-fit items-center gap-3 rounded-full bg-paper py-2 pl-6 pr-2 text-sm font-medium text-ink">
-            Learn more
-            <span
-              aria-hidden="true"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:-rotate-45"
-            >
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          <div className="mt-5 flex items-center justify-between">
+            {/* Visual button only — the whole card is the link, so this must not be an anchor */}
+            <span className="inline-flex w-fit items-center gap-3 rounded-full bg-paper py-2 pl-6 pr-2 text-sm font-medium text-ink">
+              Learn more
+              <span
+                aria-hidden="true"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:-rotate-45"
               >
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
             </span>
-          </span>
+            {/* Decorative danger chevrons */}
+            <span aria-hidden="true" className="mr-2 flex items-center text-white">
+              {[0, 1, 2].map((i) => (
+                <svg
+                  key={i}
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="-ml-2 first:ml-0"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              ))}
+            </span>
+          </div>
         </div>
       </article>
     </Link>
