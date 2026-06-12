@@ -61,6 +61,28 @@
   background-repeat: repeat;
 }
 
+/* Left-to-right wash-in for the swerving-lines background (SwervingLines component) */
+@keyframes lines-sweep {
+  from {
+    mask-position: 100% 0;
+  }
+  to {
+    mask-position: 0% 0;
+  }
+}
+@utility lines-sweep {
+  mask-image: linear-gradient(90deg, #000 45%, transparent 55%);
+  mask-size: 250% 100%;
+  mask-repeat: no-repeat;
+  animation: lines-sweep 2.4s ease-in-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lines-sweep {
+    animation: none;
+    mask-image: none;
+  }
+}
+
 /* Straight 45° rising lines — terracotta activity cards; whole-pixel stops keep spacing even */
 @utility bg-lines-diagonal {
   background-image: repeating-linear-gradient(

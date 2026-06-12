@@ -6,6 +6,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import DragScroller from "./components/ui/DragScroller";
 import StatsBar from "./components/StatsBar";
 import FloatingImages from "./components/FloatingImages";
+import SwervingLines from "./components/SwervingLines";
 import StatementBlock from "./components/ui/StatementBlock";
 import MediaFrame from "./components/ui/MediaFrame";
 import SectionPanel from "./components/ui/SectionPanel";
@@ -83,6 +84,7 @@ export default function Home() {
 
       {/* Let's reconnect */}
       <section className="relative overflow-hidden bg-paper py-32 lg:py-52">
+        <SwervingLines />
         <FloatingImages
           images={[
             { src: "/media/dc-polaroid-1-amstel-dip.JPG", position: "left-[5%] top-[8%] w-32 aspect-[4/5]", depth: 18 },
