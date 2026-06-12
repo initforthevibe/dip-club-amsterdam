@@ -56,7 +56,18 @@
 
 /* Fine wavy line texture — for terracotta CTA panels */
 @utility bg-wavy-fine {
-  background-image: url("data:image/svg+xml,%3Csvg width='140' height='6' viewBox='0 0 140 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q17.5 1 35 3 Q52.5 5 70 3 Q87.5 1 105 3 Q122.5 5 140 3' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.18'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='140' height='6' viewBox='0 0 140 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q17.5 -1 35 3 Q52.5 7 70 3 Q87.5 -1 105 3 Q122.5 7 140 3' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.18'/%3E%3C/svg%3E");
   background-size: 140px 6px;
   background-repeat: repeat;
+}
+
+/* Straight 45° rising lines — terracotta activity cards; density/stroke match bg-wavy-fine */
+@utility bg-lines-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5.5px,
+    rgb(255 255 255 / 0.18) 5.5px,
+    rgb(255 255 255 / 0.18) 6px
+  );
 }
