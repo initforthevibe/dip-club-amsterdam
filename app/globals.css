@@ -7,10 +7,9 @@
   --color-mist: #f0efed;
   --color-terracotta: #f06530;
   --color-terracotta-dark: #db5520;
-  /* Brand blue from public/brand-assets/dip-club-logo-blue.svg — activity offering cards only */
-  --color-dip: #2f77d6;
-  --color-dip-deep: #1d4e93;
-  --color-dip-light: #e9f1fb;
+  /* Terracotta tints for activity offering cards */
+  --color-terracotta-deep: #a03d12;
+  --color-terracotta-light: #fdefe7;
 
   /* Never reference --font-switzer directly; use font-sans utilities or var(--font-sans) */
   --font-sans: var(--font-switzer), system-ui, sans-serif;
