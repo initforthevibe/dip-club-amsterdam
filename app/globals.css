@@ -7,9 +7,6 @@
   --color-mist: #f0efed;
   --color-terracotta: #f06530;
   --color-terracotta-dark: #db5520;
-  /* Terracotta tints for activity offering cards */
-  --color-terracotta-deep: #a03d12;
-  --color-terracotta-light: #fdefe7;
 
   /* Never reference --font-switzer directly; use font-sans utilities or var(--font-sans) */
   --font-sans: var(--font-switzer), system-ui, sans-serif;
