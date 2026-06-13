@@ -7,7 +7,7 @@ const FOOTER_LINKS = [
   { label: "About", href: "/about" },
   { label: "Manifesto", href: "/manifesto" },
   { label: "Dips", href: "/dips" },
-  { label: "Excursions", href: "/excursions" },
+  { label: "Trips", href: "/trips" },
   { label: "Adventures", href: "/adventures" },
   { label: "Field Notes", href: "/field-notes" },
   { label: "Contact", href: "/contact" },
@@ -28,6 +28,22 @@ export default function Footer() {
                 className="group inline-flex items-center gap-3 rounded-full border border-white/20 py-1.5 pl-5 pr-1.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
               >
                 Instagram
+                <span
+                  aria-hidden="true"
+                  className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 transition-transform duration-300 group-hover:-rotate-45"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+              <a
+                href={SITE.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/20 py-1.5 pl-5 pr-1.5 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
+              >
+                Event calendar
                 <span
                   aria-hidden="true"
                   className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 transition-transform duration-300 group-hover:-rotate-45"

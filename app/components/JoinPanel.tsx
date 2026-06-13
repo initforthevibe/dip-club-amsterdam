@@ -9,7 +9,7 @@ type JoinPanelProps = {
 
 export default function JoinPanel({
   title = "Join the community.",
-  body = "Be the first to know about upcoming dips, excursions, and adventures.",
+  body = "Be the first to know about upcoming dips, trips, and adventures.",
 }: JoinPanelProps) {
   return (
     <section className="bg-paper py-12 lg:py-16">

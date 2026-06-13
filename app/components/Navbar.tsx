@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
 
 const ACTIVITY_LINKS = [
   { label: "Dips", href: "/dips" },
-  { label: "Excursions", href: "/excursions" },
+  { label: "Trips", href: "/trips" },
   { label: "Adventures", href: "/adventures" },
 ];
 
@@ -58,7 +58,7 @@ export default function Navbar() {
   }, []);
 
   const pill = scrolled && !menuOpen;
-  const isActivityPage = ["/dips", "/excursions", "/adventures"].includes(pathname);
+  const isActivityPage = ["/dips", "/trips", "/adventures"].includes(pathname);
 
   return (
     <>
