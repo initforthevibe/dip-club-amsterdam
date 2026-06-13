@@ -146,12 +146,12 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <ActivityCard
-                title="Excursions"
+                title="Trips"
                 frequency="Every Semester"
                 description="Day and weekend trips beyond Amsterdam. Hiking, outdoor challenges, and exploring new terrain together."
                 imageSrc="/media/dc-quarterly-excursion.JPG"
-                imageAlt="Dip Club group on a hiking excursion"
-                href="/excursions"
+                imageAlt="Dip Club group on a hiking trip"
+                href="/trips"
               />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
@@ -245,7 +245,7 @@ export default function Home() {
                 <div className="flex-1 p-6 sm:p-8 lg:p-12 lg:self-center">
                   <h2 className="type-statement">Join the community.</h2>
                   <p className="type-body mt-4 max-w-md text-white/80">
-                    Be the first to know about upcoming dips, excursions, and
+                    Be the first to know about upcoming dips, trips, and
                     adventures. Got a question? Don&apos;t hesitate to ask us at{" "}
                     <a
                       href={`mailto:${SITE.email}`}

@@ -61,7 +61,7 @@ export default function AboutPage() {
               <p className="type-body mt-6 text-ink/60">
                 Word spread the way real things do — through experience. Someone came to a
                 dip, told a friend, and that friend brought two more. Within a year we had
-                monthly dips, semester excursions to the Ardennes and the Belgian coast, and
+                monthly dips, semester trips to the Ardennes and the Belgian coast, and
                 our first annual adventure — a 12-day hike through the Dolomites.
               </p>
               <p className="type-body mt-4 text-ink/60">
@@ -130,7 +130,7 @@ export default function AboutPage() {
       {/* CTA */}
       <JoinPanel
         title="Come find out for yourself."
-        body="Join our WhatsApp community to hear about the next dip, excursion, or adventure."
+        body="Join our WhatsApp community to hear about the next dip, trip, or adventure."
       />
     </main>
   );

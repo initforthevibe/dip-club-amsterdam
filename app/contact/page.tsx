@@ -54,7 +54,7 @@ export default function ContactPage() {
                   </div>
                   <h2 className="type-title">Instagram</h2>
                   <p className="type-body mt-2 text-ink/60">
-                    Photos, stories, and recaps from our dips, excursions, and adventures.
+                    Photos, stories, and recaps from our dips, trips, and adventures.
                     Follow along at @dipclub.ams.
                   </p>
                 </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
               },
               {
                 q: "How much do events cost?",
-                a: "Monthly dips are free. Excursions and adventures are at-cost — we split transport, accommodation, and food equally. Nobody profits from Dip Club. We're a community, not a business.",
+                a: "Monthly dips are free. Trips and adventures are at-cost — we split transport, accommodation, and food equally. Nobody profits from Dip Club. We're a community, not a business.",
               },
               {
                 q: "I'm new to Amsterdam. Is this a good way to meet people?",

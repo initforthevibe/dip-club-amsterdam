@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/excursions",
+      "destination": "/trips",
+      "permanent": true
+    }
+  ]
+}

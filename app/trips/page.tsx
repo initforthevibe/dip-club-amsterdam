@@ -5,16 +5,16 @@ import MediaFrame from "../components/ui/MediaFrame";
 import JoinPanel from "../components/JoinPanel";
 
 export const metadata: Metadata = {
-  title: "Excursions — Dip Club Amsterdam",
+  title: "Trips — Dip Club Amsterdam",
   description:
     "Day and weekend trips beyond Amsterdam. Hiking, outdoor challenges, and exploring new terrain together every semester.",
 };
 
-export default function ExcursionsPage() {
+export default function TripsPage() {
   return (
     <>
       {/* Hero */}
-      <Hero title="Excursions." subtitle="Beyond the city limits" badge="Every semester" />
+      <Hero title="Trips." subtitle="Beyond the city limits" badge="Every semester" />
 
       {/* Overview section 1 — Text left, Image right */}
       <section className="bg-paper py-24 lg:py-32">
@@ -27,13 +27,13 @@ export default function ExcursionsPage() {
                 Day and weekend trips to get out of Amsterdam.
               </h2>
               <p className="type-body mt-6 text-ink/60">
-                Twice a year we organize an excursion beyond the city. These are day or
+                Twice a year we organize a trip beyond the city. These are day or
                 weekend trips to nearby destinations — think the Ardennes, the Belgian
                 coast, or the German countryside. We hike, swim, cook together, and
                 explore terrain you won&apos;t find in the Vondelpark.
               </p>
               <p className="type-body mt-4 text-ink/60">
-                Excursions are about getting out of your routine together. Short enough
+                Trips are about getting out of your routine together. Short enough
                 to fit into a busy schedule, long enough to feel like a real adventure.
               </p>
             </ScrollReveal>
@@ -42,7 +42,7 @@ export default function ExcursionsPage() {
             <ScrollReveal delay={0.2} className="flex-1">
               <MediaFrame
                 src="/media/dc-quarterly-excursion.JPG"
-                alt="Dip Club Amsterdam quarterly excursion"
+                alt="Dip Club Amsterdam quarterly trip"
                 className="h-[300px] sm:h-[400px]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -58,7 +58,7 @@ export default function ExcursionsPage() {
             {/* Right: text (rendered first in DOM, flex-row-reverse visually puts it right) */}
             <ScrollReveal className="flex-1">
               <p className="type-micro mb-5 text-ink/45">The details</p>
-              <h2 className="type-statement">What an excursion looks like.</h2>
+              <h2 className="type-statement">What a trip looks like.</h2>
               <ul className="mt-6 space-y-4">
                 {[
                   "Duration: 1-2 days, usually a weekend",
@@ -101,7 +101,7 @@ export default function ExcursionsPage() {
                 Most of us live surrounded by landscapes we&apos;ve never explored. The Netherlands and its neighbours hold centuries of natural beauty, cultural richness, and culinary traditions that reward anyone willing to slow down and pay attention.
               </p>
               <p className="type-body mt-4 text-ink/60">
-                On excursions, we forage wild garlic in the Ardennes, swim in rivers most locals have forgotten about, eat at farms rather than restaurants, and learn the names of the trees we walk under. It&apos;s a practice of local appreciation — discovering that adventure doesn&apos;t require a long-haul flight, just a willingness to look closer at where you already are.
+                On trips, we forage wild garlic in the Ardennes, swim in rivers most locals have forgotten about, eat at farms rather than restaurants, and learn the names of the trees we walk under. It&apos;s a practice of local appreciation — discovering that adventure doesn&apos;t require a long-haul flight, just a willingness to look closer at where you already are.
               </p>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.1}>
@@ -137,13 +137,13 @@ export default function ExcursionsPage() {
       <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
-            <h2 className="type-statement mb-12">From our excursions.</h2>
+            <h2 className="type-statement mb-12">From our trips.</h2>
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-2">
             <ScrollReveal delay={0}>
               <MediaFrame
                 src="/media/IMG_4961.jpg"
-                alt="Excursion photo"
+                alt="Trip photo"
                 className="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
@@ -151,7 +151,7 @@ export default function ExcursionsPage() {
             <ScrollReveal delay={0.15}>
               <MediaFrame
                 src="/media/IMG_5026.jpg"
-                alt="Excursion group activity"
+                alt="Trip group activity"
                 className="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
@@ -162,7 +162,7 @@ export default function ExcursionsPage() {
 
       {/* CTA */}
       <JoinPanel
-        title="Join the next excursion."
+        title="Join the next trip."
         body="Sign up for our next trip or join the WhatsApp group to stay in the loop."
       />
     </>

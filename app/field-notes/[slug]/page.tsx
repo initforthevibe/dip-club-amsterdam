@@ -79,7 +79,7 @@ export default async function FieldNotePostPage({ params }: Props) {
             <SectionPanel tone="dark">
               <h2 className="type-title">Join the community</h2>
               <p className="type-body mt-2 text-white/65">
-                Be the first to know about upcoming dips, excursions, and adventures.
+                Be the first to know about upcoming dips, trips, and adventures.
               </p>
               <div className="mt-6">
                 <Button href={SITE.whatsapp} variant="primary">

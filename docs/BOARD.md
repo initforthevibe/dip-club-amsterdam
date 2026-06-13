@@ -21,4 +21,7 @@ Card conventions:
 
 ## Done
 
+- [x] Rename "Excursions" activity to "Trips" across site (route → /trips, vercel.json redirect from /excursions) #website #chore #p2
+- [x] Add Luma event calendar link to footer (https://luma.com/dipclub.ams via SITE.calendar) #website #feat #p3
+
 ## Parked
