@@ -21,10 +21,9 @@ Card conventions:
 
 ## In Progress
 
-- [ ] Add corner-notch motif to activity cards + home hero #website #feat #p2 — docs/superpowers/specs/2026-06-14-corner-notch-design.md
-
 ## Done
 
+- [x] Add corner-notch motif to activity cards + home hero #website #feat #p2 — docs/superpowers/specs/2026-06-14-corner-notch-design.md
 - [x] Rename "Excursions" activity to "Trips" across site (route → /trips, vercel.json redirect from /excursions) #website #chore #p2
 - [x] Add Luma event calendar link to footer (https://luma.com/dipclub.ams via SITE.calendar) #website #feat #p3
 
