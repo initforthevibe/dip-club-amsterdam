@@ -19,6 +19,8 @@ Card conventions:
 
 ## In Progress
 
+- [ ] Add corner-notch motif to activity cards + home hero #website #feat #p2 — docs/superpowers/specs/2026-06-14-corner-notch-design.md
+
 ## Done
 
 - [x] Rename "Excursions" activity to "Trips" across site (route → /trips, vercel.json redirect from /excursions) #website #chore #p2
