@@ -15,6 +15,8 @@ Card conventions:
 
 ## Backlog
 
+- [ ] Remove or repurpose unused `UtilityCard` ui primitive #website #chore #p3 — orphaned after the home hero dropped its floating Field Notes card
+
 ## Up Next
 
 ## In Progress

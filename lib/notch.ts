@@ -18,6 +18,9 @@ type BottomRightNotchOptions = {
  *
  * Outline is traversed clockwise from the top edge. All corners are rounded;
  * the inner re-entrant corner is concave (`ccw`), the rest are convex (`cw`).
+ *
+ * @remarks `notchDepth` must exceed `2 * notchRadius`, otherwise the notch's
+ * vertical wall inverts and the path self-intersects.
  */
 export function bottomRightNotch({
   outerRadius: o,
