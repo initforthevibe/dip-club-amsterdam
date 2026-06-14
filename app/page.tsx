@@ -44,24 +44,12 @@ const PILLARS = [
 
 export default function Home() {
   const posts = getAllPosts();
-  const latestPost = posts[0];
 
   return (
     <main>
       <HomeHero
         backgroundImage="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
         backgroundAlt="Dip Club members at an Amsterdam swimming spot against the city skyline"
-        utility={
-          latestPost
-            ? {
-                label: "Field Notes",
-                title: latestPost.title,
-                image: latestPost.coverImage,
-                imageAlt: latestPost.title,
-                href: `/field-notes/${latestPost.slug}`,
-              }
-            : undefined
-        }
       />
 
       {/* Intro Section */}
