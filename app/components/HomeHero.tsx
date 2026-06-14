@@ -3,25 +3,25 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "./ui/Button";
-import UtilityCard from "./ui/UtilityCard";
 import { SITE } from "@/lib/site";
+import { bottomRightNotch } from "@/lib/notch";
+
+// Slim shelf, ~1/3 width, ~1.5 button-heights deep. rounded-frame = 20px.
+const NOTCH_CLIP = bottomRightNotch({
+  outerRadius: 20,
+  notchWidth: "33.33%",
+  notchDepth: 72,
+  notchRadius: 20,
+});
 
 type HomeHeroProps = {
   backgroundImage: string;
   backgroundAlt: string;
-  utility?: {
-    label: string;
-    title: string;
-    image?: string;
-    imageAlt?: string;
-    href: string;
-  };
 };
 
 export default function HomeHero({
   backgroundImage,
   backgroundAlt,
-  utility,
 }: HomeHeroProps) {
   const [revealed, setRevealed] = useState(false);
 
@@ -44,6 +44,7 @@ export default function HomeHero({
           "transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
           revealed ? "scale-100" : "scale-[0.94]",
         ].join(" ")}
+        style={{ clipPath: NOTCH_CLIP }}
       >
         <Image
           src={backgroundImage}
@@ -81,13 +82,6 @@ export default function HomeHero({
             </div>
           </div>
         </div>
-
-        {/* Floating utility card */}
-        {utility && (
-          <div className={["absolute right-6 bottom-6 hidden w-64 lg:block", stagger("delay-[900ms]")].join(" ")}>
-            <UtilityCard {...utility} tone="light" />
-          </div>
-        )}
       </div>
     </section>
   );
