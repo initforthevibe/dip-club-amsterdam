@@ -54,7 +54,7 @@ export default function FloatingImages({ images }: FloatingImagesProps) {
       {images.map((img) => (
         <div
           key={img.src}
-          className={`absolute overflow-hidden rounded-full ${img.position}`}
+          className={`absolute overflow-hidden ${img.position}`}
           style={{
             transform: `translate(${(mouse.x * img.depth).toFixed(1)}px, ${(
               mouse.y * img.depth +

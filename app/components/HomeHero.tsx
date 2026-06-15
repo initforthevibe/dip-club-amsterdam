@@ -6,11 +6,12 @@ import Button from "./ui/Button";
 import { SITE } from "@/lib/site";
 import { bottomRightNotch } from "@/lib/notch";
 
-// Deep shelf, ~1/3 width, ~3 button-heights deep — original width, double depth. rounded-frame = 20px.
+// Bottom-right corner notch — same 1/3 width, depth reduced 20% (144 → 115).
+// rounded-frame = 20px.
 const NOTCH_CLIP = bottomRightNotch({
   outerRadius: 20,
   notchWidth: "33.33%",
-  notchDepth: 144,
+  notchDepth: 115,
   notchRadius: 20,
 });
 
