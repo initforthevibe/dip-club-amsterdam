@@ -82,6 +82,10 @@ export default function Home() {
             { src: "/media/dc-quarterly-excursion.JPG", position: "right-[28%] bottom-[8%] w-36 aspect-square", depth: 14 },
             { src: "/media/dc-polaroid-4-dolomites-hike.jpg", position: "right-[8%] top-[10%] w-40 aspect-square", depth: 8 },
             { src: "/media/dc-biweekly-dip.jpg", position: "right-[4%] bottom-[18%] w-28 aspect-square", depth: 22 },
+            { src: "/media/dc-polaroid-2-dolomites-hike.jpg", position: "left-[3%] top-[42%] w-28 aspect-square", depth: 16 },
+            { src: "/media/dc-polaroid-5-amsterdam-dip-spot.jpg", position: "left-[22%] bottom-[22%] w-28 aspect-square", depth: 12 },
+            { src: "/media/dc-annual-trip.jpg", position: "right-[20%] top-[40%] w-32 aspect-square", depth: 20 },
+            { src: "/media/dc-annual-adventure-2.JPG", position: "right-[22%] top-[8%] w-28 aspect-square", depth: 24 },
           ]}
         />
         <div className="relative mx-auto w-full max-w-[1320px] px-6 text-center lg:px-12">
