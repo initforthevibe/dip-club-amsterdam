@@ -38,7 +38,7 @@ export default function ActivityCard({
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           {/* Decorative danger chevrons — moved to the image's top-right */}
