@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FieldNoteMeta } from "@/lib/field-notes";
 
-export default function FieldNoteCard({ post }: { post: FieldNoteMeta }) {
+export default function FieldNoteCard({
+  post,
+  journal = false,
+}: {
+  post: FieldNoteMeta;
+  journal?: boolean;
+}) {
   const displayDate = new Date(post.date).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
@@ -12,8 +18,22 @@ export default function FieldNoteCard({ post }: { post: FieldNoteMeta }) {
   return (
     <Link
       href={`/field-notes/${post.slug}`}
-      className="group flex w-full flex-col rounded-card border border-ink/10 bg-paper p-3 transition-transform duration-200 hover:-translate-y-0.5"
+      className={[
+        "group relative flex w-full flex-col rounded-card border border-ink/10 bg-paper p-3 transition-transform duration-200 hover:-translate-y-0.5",
+        journal ? "pl-6" : "",
+      ].join(" ")}
     >
+      {/* Journal binding holes — punched down the left margin, matching the card's 1px stroke */}
+      {journal && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 flex w-6 flex-col items-center justify-evenly py-5"
+        >
+          {Array.from({ length: 7 }).map((_, i) => (
+            <span key={i} className="h-2 w-2 rounded-full border border-ink/15" />
+          ))}
+        </span>
+      )}
       <div className="relative h-48 overflow-hidden rounded-[8px]">
         <Image
           src={post.coverImage}

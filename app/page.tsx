@@ -102,7 +102,13 @@ export default function Home() {
           <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
             {PILLARS.map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i * 0.08}>
-                <div className="border-t border-ink/20 pt-5">
+                <div className="group relative pt-5">
+                  {/* Gray rule, masked on hover by a black line wiping across it left-to-right */}
+                  <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-ink/20" />
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 top-0 h-px w-full origin-left scale-x-0 bg-ink transition-transform duration-1000 ease-out group-hover:scale-x-100"
+                  />
                   <p className="type-micro text-ink/45">
                     {String(i + 1).padStart(2, "0")}
                   </p>
@@ -174,7 +180,7 @@ export default function Home() {
             <DragScroller className="-mx-6 gap-6 px-6 pb-2 lg:-mx-12 lg:px-12">
               {posts.map((post) => (
                 <div key={post.slug} className="flex w-[320px] shrink-0 sm:w-[380px]">
-                  <FieldNoteCard post={post} />
+                  <FieldNoteCard post={post} journal />
                 </div>
               ))}
             </DragScroller>
