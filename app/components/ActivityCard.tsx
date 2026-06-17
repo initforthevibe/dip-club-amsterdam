@@ -70,7 +70,7 @@ export default function ActivityCard({
           <p className="type-body mt-2 flex-1 text-white/80">{description}</p>
           <div className="mt-5">
             {/* Visual button only — the whole card is the link, so this must not be an anchor */}
-            <span className="inline-flex w-fit items-center gap-3 rounded-full bg-paper py-2 pl-6 pr-2 text-sm font-medium text-ink">
+            <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white py-2 pl-6 pr-2 text-sm font-medium text-ink">
               Learn more
               <span
                 aria-hidden="true"

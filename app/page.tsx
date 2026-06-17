@@ -184,7 +184,7 @@ export default function Home() {
             <DragScroller className="-mx-6 gap-6 px-6 pb-2 lg:-mx-12 lg:px-12">
               {posts.map((post) => (
                 <div key={post.slug} className="flex w-[320px] shrink-0 sm:w-[380px]">
-                  <FieldNoteCard post={post} journal />
+                  <FieldNoteCard post={post} />
                 </div>
               ))}
             </DragScroller>
