@@ -61,7 +61,7 @@ export default function HomeHero({
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/35" />
 
         {/* Text content */}
-        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14 lg:pb-[106px]">
+        <div className="absolute inset-x-0 bottom-0 p-6 pb-[74px] sm:p-10 sm:pb-[90px] lg:p-14 lg:pb-[106px]">
           <div>
             <h1
               className={["type-display text-white lg:whitespace-nowrap", stagger("delay-300")].join(" ")}
