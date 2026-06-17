@@ -83,7 +83,7 @@ export default function Navbar() {
                 alt="Dip Club Amsterdam"
                 width={140}
                 height={40}
-                className={pill ? "h-5 w-auto" : "h-8 w-auto"}
+                className={pill ? "h-6 w-auto" : "h-[2.4rem] w-auto"}
                 priority
               />
             </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
                   ? isActivityPage
                   : pathname === link.href;
                 const linkClasses = [
-                  "text-sm font-medium transition-colors duration-200",
+                  "text-[1.05rem] font-medium transition-colors duration-200",
                   isActive ? "text-white" : "text-white/90 hover:text-white",
                 ].join(" ");
 
@@ -135,7 +135,7 @@ export default function Navbar() {
                             key={child.href}
                             href={child.href}
                             className={[
-                              "block px-5 py-3 text-sm font-medium transition-colors",
+                              "block px-5 py-3 text-[1.05rem] font-medium transition-colors",
                               pathname === child.href
                                 ? "text-white"
                                 : "text-white/70 hover:bg-white/10 hover:text-white",
