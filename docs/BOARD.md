@@ -17,6 +17,20 @@ Card conventions:
 
 - [ ] Remove or repurpose unused `UtilityCard` ui primitive #website #chore #p3 — orphaned after the home hero dropped its floating Field Notes card
 - [ ] Pin contact-page info cards to bg-white #website #chore #p3 — they still use bg-paper (now off-white #fafaf8); make white to match field-note cards
+- [ ] Write field note: How to start cold-water swimming in Amsterdam #content #p3 — (P) Outdoor Swimming · where to go, what to bring, staying safe
+- [ ] Write field note: A year of swimming the Amstel through every season #content #p3 — (E) Outdoor Swimming · what it taught me
+- [ ] Write field note: What cold-water immersion actually does to your body #content #p3 — (P) Outdoor Swimming · the science, minus the hype
+- [ ] Write field note: Sauna benefits beyond the heat #content #p3 — (P) Social Sauna · what the research really says
+- [ ] Write field note: Why we end every dip in the sauna #content #p3 — (E) Social Sauna · the ritual of warming up together
+- [ ] Write field note: Sauna etiquette for first-timers #content #p3 — (P) Social Sauna · the unwritten rules
+- [ ] Write field note: Types of breath work explained #content #p3 — (P) Breath Work · Wim Hof, box, coherent — and when to use each
+- [ ] Write field note: My first breath-hold panic #content #p3 — (E) Breath Work · what it taught me about control
+- [ ] Write field note: A 5-minute breathing reset before a cold plunge #content #p3 — (P) Breath Work
+- [ ] Write field note: Underrated trails within an hour of Amsterdam #content #p3 — (E) Hiking
+- [ ] Write field note: How to read terrain and not get lost #content #p3 — (P) Hiking · beginner navigation primer; pairs with the Dolomites post
+- [ ] Write field note: 5 survival skills every outdoor swimmer should know #content #p3 — (P) Bushcraft
+- [ ] Write field note: Building a fire in the rain #content #p3 — (E) Bushcraft · a wet afternoon in the Veluwe
+- [ ] Write field note: Cold-weather survival basics #content #p3 — (P) Bushcraft · hypothermia, layering, shelter
 
 ## Up Next
 
