@@ -42,6 +42,7 @@ Card conventions:
 
 ## Done
 
+- [x] Simplify mobile menu: collapse Activities sub-links into one link #website #chore #p3 — mobile shows a flat 5-item menu; Activities → /#activities (home overview) so all three stay reachable. Desktop dropdown unchanged
 - [x] Add Open Graph image + social metadata #website #feat #p2 — public/og-image.png rendered from scripts/og/og-image.html; wires openGraph/twitter/metadataBase in app/layout.tsx
 - [x] Add corner-notch motif to activity cards + home hero #website #feat #p2 — docs/superpowers/specs/2026-06-14-corner-notch-design.md
 - [x] Rename "Excursions" activity to "Trips" across site (route → /trips, vercel.json redirect from /excursions) #website #chore #p2
