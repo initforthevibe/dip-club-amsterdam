@@ -47,7 +47,19 @@ lib/
   site.ts            → SITE constants — external links (WhatsApp/Instagram/email) always come from here
 content/
   field-notes/        → .mdx blog posts (frontmatter: title, date, pillars, excerpt, coverImage)
+scripts/
+  og/                 → Open Graph card source + renderer (see below)
 ```
+
+## Open Graph Image
+
+`public/og-image.png` (1200×630) is generated, not hand-drawn. Source is `scripts/og/og-image.html`;
+regenerate with `node scripts/og/render.mjs` (headless Chrome, no npm dependency).
+
+- Not built with `next/og` — Satori supports neither `clip-path` (the corner notch) nor `.woff2` (Switzer).
+- `og-image.html` inlines a JS port of `bottomRightNotch()` — keep it in sync with `lib/notch.ts`.
+- The root layout deliberately omits `openGraph.title`/`description`/`url` so each page inherits the
+  shared image but keeps its own title and description. Don't add them back.
 
 ## Key Rules
 
