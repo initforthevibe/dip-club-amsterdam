@@ -15,7 +15,10 @@ const ACTIVITY_LINKS = [
 const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Manifesto", href: "/manifesto" },
-  { label: "Activities", href: "/dips", children: ACTIVITY_LINKS },
+  // Desktop opens `children` as a dropdown and never follows this href; mobile
+  // shows a single link and does, landing on the home section that lists all
+  // three activities.
+  { label: "Activities", href: "/#activities", children: ACTIVITY_LINKS },
   { label: "Field Notes", href: "/field-notes" },
   { label: "Contact", href: "/contact" },
 ];
@@ -59,6 +62,17 @@ export default function Navbar() {
 
   const pill = scrolled && !menuOpen;
   const isActivityPage = ["/dips", "/trips", "/adventures"].includes(pathname);
+
+  // Returns the element id when `href` targets a hash on the page we are
+  // already on, otherwise null. Those links are the one case the mobile menu
+  // cannot leave to Link + the pathname effect: the route never changes, so
+  // the overlay would stay open, and the open overlay locks body scroll, so
+  // the jump to the target lands nowhere.
+  const samePageHashId = (href: string) => {
+    const i = href.indexOf("#");
+    if (i === -1) return null;
+    return (href.slice(0, i) || "/") === pathname ? href.slice(i + 1) : null;
+  };
 
   return (
     <>
@@ -207,33 +221,35 @@ export default function Navbar() {
         ].join(" ")}
       >
         <nav className="flex flex-col items-center gap-6">
+          {/* Every entry renders as one link — the Activities dropdown is not
+              expanded here, so the menu stays a flat list of five. */}
           {NAV_LINKS.map((link) => {
-            if (link.children) {
-              return (
-                <div key={link.label} className="flex flex-col items-center gap-3">
-                  <span className="type-micro text-ink/40">{link.label}</span>
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className={[
-                        "type-title transition-colors duration-200",
-                        pathname === child.href ? "text-ink" : "text-ink/60 hover:text-ink",
-                      ].join(" ")}
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              );
-            }
+            const isActive = link.children
+              ? isActivityPage
+              : pathname === link.href;
+            const hashId = samePageHashId(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                // Every other link changes the route, which closes the overlay
+                // via the pathname effect — leave those untouched.
+                onClick={
+                  hashId
+                    ? (e) => {
+                        e.preventDefault();
+                        setMenuOpen(false);
+                        document.body.style.overflow = "";
+                        document
+                          .getElementById(hashId)
+                          ?.scrollIntoView({ behavior: "smooth" });
+                        window.history.replaceState(null, "", link.href);
+                      }
+                    : undefined
+                }
                 className={[
                   "text-2xl font-medium transition-colors duration-200",
-                  pathname === link.href ? "text-ink" : "text-ink/60 hover:text-ink",
+                  isActive ? "text-ink" : "text-ink/60 hover:text-ink",
                 ].join(" ")}
               >
                 {link.label}

@@ -40,6 +40,7 @@ Card conventions:
 
 ## Done
 
+- [x] Simplify mobile menu: collapse Activities sub-links into one link #website #chore #p3 — mobile shows a flat 5-item menu; Activities → /#activities (home overview) so all three stay reachable. Desktop dropdown unchanged
 - [x] Add favicon + apple-touch-icon set #website #chore #p3 — app/icon.svg (whale on terracotta) + app/apple-icon.png 180×180
 - [x] Redirect www.dipclub.nl → dipclub.nl #website #fix #p3 — host-based redirect in vercel.json (not a dashboard setting, so it's version-controlled)
 - [x] Add Open Graph image + social metadata #website #feat #p2 — public/og-image.png rendered from scripts/og/og-image.html; wires openGraph/twitter/metadataBase in app/layout.tsx
