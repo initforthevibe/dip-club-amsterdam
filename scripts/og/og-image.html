@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Dip Club — Open Graph card (1200×630)</title>
+<!--
+  Source of truth for public/og-image.png.
+
+  Rendered in headless Chrome at exactly 1200×630 and screenshotted, rather than
+  built with next/og: Satori (the next/og renderer) supports neither `clip-path`
+  nor .woff2, and this card needs both — the corner notch and Switzer.
+
+  Regenerate:  node scripts/og/render.mjs
+-->
+<style>
+  /* Design tokens — mirrors the @theme block in app/globals.css */
+  :root {
+    --paper: #fafaf8;
+    --ink: #0d0d0d;
+    --terracotta: #f06530;
+    --terracotta-dark: #db5520;
+    --radius-frame: 20px;
+  }
+
+  @font-face {
+    font-family: "Switzer";
+    src: url("../../app/fonts/Switzer-Variable.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    background: var(--paper);
+    font-family: "Switzer", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* MediaFrame pattern: the card is inset from the canvas edge, so the
+     bottom-right notch has paper to bite into. */
+  .frame {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 60px;
+    border-radius: var(--radius-frame);
+    border: 2px solid rgb(219 85 32 / 0.5);
+    background-color: var(--terracotta);
+    /* bg-lines-diagonal, scaled ~1.5× for the larger canvas.
+       Whole-pixel stops keep the spacing even. */
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 9px,
+      rgb(255 255 255 / 0.16) 9px,
+      rgb(255 255 255 / 0.16) 10px
+    );
+  }
+
+  .top { display: flex; align-items: flex-start; justify-content: space-between; }
+
+  /* The white lockup carries generous internal padding in its viewBox, so the
+     rendered box is larger than the visible glyph height. */
+  .logo { height: 78px; width: auto; display: block; margin: -14px 0 0 -6px; }
+
+  .chevrons { display: flex; align-items: center; color: #fff; filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.35)); }
+  .chevrons svg { margin-left: -18px; }
+  .chevrons svg:first-child { margin-left: 0; }
+
+  /* type-display, sized for the card and matching HomeHero's 550 weight */
+  .headline {
+    font-size: 96px;
+    font-weight: 550;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  /* type-title, scaled up */
+  .tagline {
+    margin-top: 20px;
+    max-width: 640px;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: rgb(255 255 255 / 0.85);
+  }
+
+  /* Button primitive: white pill, ink circled right-arrow */
+  .pill {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 10px 10px 32px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-size: 21px;
+    font-weight: 500;
+  }
+  .pill .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="card" id="card">
+      <div class="top">
+        <img class="logo" src="../../public/brand-assets/dipclub-logo-white.svg" alt="Dip Club Amsterdam" />
+        <span class="chevrons">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </div>
+
+      <div class="bottom">
+        <h1 class="headline">Reset. Your. Mind.</h1>
+        <p class="tagline">Amsterdam&rsquo;s social adventure community focused on reconnecting with nature.</p>
+        <span class="pill">
+          dipclub.nl
+          <span class="arrow">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Verbatim JS port of bottomRightNotch() in lib/notch.ts — keep in sync.
+  function bottomRightNotch({ outerRadius: o, notchWidth: w, notchDepth: d, notchRadius: r }) {
+    return [
+      "shape(",
+      `from ${o}px 0,`,
+      `hline to calc(100% - ${o}px),`,
+      `arc to 100% ${o}px of ${o}px cw,`,
+      `vline to calc(100% - ${d + r}px),`,
+      `arc to calc(100% - ${r}px) calc(100% - ${d}px) of ${r}px cw,`,
+      `hline to calc(100% - ${w} + ${r}px),`,
+      `arc to calc(100% - ${w}) calc(100% - ${d - r}px) of ${r}px ccw,`,
+      `vline to calc(100% - ${r}px),`,
+      `arc to calc(100% - ${w} - ${r}px) 100% of ${r}px cw,`,
+      `hline to ${o}px,`,
+      `arc to 0 calc(100% - ${o}px) of ${o}px cw,`,
+      `vline to ${o}px,`,
+      `arc to ${o}px 0 of ${o}px cw,`,
+      "close",
+      ")",
+    ].join(" ");
+  }
+
+  // Same proportions as the home hero: 1/3 card width, radius = frame radius.
+  document.getElementById("card").style.clipPath = bottomRightNotch({
+    outerRadius: 20,
+    notchWidth: "33.33%",
+    notchDepth: 84,
+    notchRadius: 20,
+  });
+</script>
+</body>
+</html>
