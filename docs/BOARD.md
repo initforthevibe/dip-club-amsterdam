@@ -15,8 +15,8 @@ Card conventions:
 
 ## Backlog
 
-- [ ] Add SPF + DMARC records for dipclub.nl #infra #sec #p2 — zone has Google Workspace MX but zero TXT records; hello@dipclub.nl is spoofable and outbound mail is undefended. Add SPF (include:_spf.google.com) + DMARC, then DKIM from Workspace admin
-- [ ] Remove stale ftp/mail CNAMEs from dipclub.nl zone #infra #chore #p3 — TransIP defaults still pointing at @ (now Vercel); mail.dipclub.nl resolving to a web host is misleading
+- [ ] Publish DKIM for dipclub.nl #infra #sec #p2 — generate the key in Google Workspace admin (Gmail → Authenticate email, 2048-bit, selector `google`), then publish google._domainkey TXT in TransIP. Blocked on admin console access; SPF+DMARC are already live
+- [ ] Tighten dipclub.nl DMARC to p=quarantine #infra #sec #p3 — after ~2 weeks of rua reports at p=none confirm nothing legitimate fails, and DKIM is published
 - [ ] Remove or repurpose unused `UtilityCard` ui primitive #website #chore #p3 — orphaned after the home hero dropped its floating Field Notes card
 - [ ] Pin contact-page info cards to bg-white #website #chore #p3 — they still use bg-paper (now off-white #fafaf8); make white to match field-note cards
 - [ ] Write field note: How to start cold-water swimming in Amsterdam #content #p3 — (P) Outdoor Swimming · where to go, what to bring, staying safe
@@ -40,6 +40,8 @@ Card conventions:
 
 ## Done
 
+- [x] Add SPF + DMARC records for dipclub.nl #infra #sec #p2 — SPF `v=spf1 include:_spf.google.com ~all` + DMARC `p=none` with rua to hello@; applied via TransIP API, verified in public DNS
+- [x] Remove stale ftp/mail CNAMEs from dipclub.nl zone #infra #chore #p3 — both removed; MX, www and apex untouched
 - [x] Simplify mobile menu: collapse Activities sub-links into one link #website #chore #p3 — mobile shows a flat 5-item menu; Activities → /#activities (home overview) so all three stay reachable. Desktop dropdown unchanged
 - [x] Add favicon + apple-touch-icon set #website #chore #p3 — app/icon.svg (whale on terracotta) + app/apple-icon.png 180×180
 - [x] Redirect www.dipclub.nl → dipclub.nl #website #fix #p3 — host-based redirect in vercel.json (not a dashboard setting, so it's version-controlled)
