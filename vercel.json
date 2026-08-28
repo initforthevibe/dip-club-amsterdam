@@ -6,6 +6,17 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.dipclub.nl"
+        }
+      ],
+      "destination": "https://dipclub.nl/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
