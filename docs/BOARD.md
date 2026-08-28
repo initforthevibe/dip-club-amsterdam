@@ -17,8 +17,6 @@ Card conventions:
 
 - [ ] Add SPF + DMARC records for dipclub.nl #infra #sec #p2 — zone has Google Workspace MX but zero TXT records; hello@dipclub.nl is spoofable and outbound mail is undefended. Add SPF (include:_spf.google.com) + DMARC, then DKIM from Workspace admin
 - [ ] Remove stale ftp/mail CNAMEs from dipclub.nl zone #infra #chore #p3 — TransIP defaults still pointing at @ (now Vercel); mail.dipclub.nl resolving to a web host is misleading
-- [ ] Redirect www.dipclub.nl → dipclub.nl #website #fix #p3 — both hosts serve HTTP 200 with no redirect (duplicate content). Confirmed via TransIP API that DNS is correct (apex A → Vercel, www CNAME → cname.vercel-dns.com); the fix is in Vercel domain settings, not DNS
-- [ ] Add favicon + apple-touch-icon set #website #chore #p3 — site currently ships no icon.ico/apple-icon; derive from the whale mark or wordmark
 - [ ] Remove or repurpose unused `UtilityCard` ui primitive #website #chore #p3 — orphaned after the home hero dropped its floating Field Notes card
 - [ ] Pin contact-page info cards to bg-white #website #chore #p3 — they still use bg-paper (now off-white #fafaf8); make white to match field-note cards
 - [ ] Write field note: How to start cold-water swimming in Amsterdam #content #p3 — (P) Outdoor Swimming · where to go, what to bring, staying safe
@@ -42,6 +40,8 @@ Card conventions:
 
 ## Done
 
+- [x] Add favicon + apple-touch-icon set #website #chore #p3 — app/icon.svg (whale on terracotta) + app/apple-icon.png 180×180
+- [x] Redirect www.dipclub.nl → dipclub.nl #website #fix #p3 — host-based redirect in vercel.json (not a dashboard setting, so it's version-controlled)
 - [x] Add Open Graph image + social metadata #website #feat #p2 — public/og-image.png rendered from scripts/og/og-image.html; wires openGraph/twitter/metadataBase in app/layout.tsx
 - [x] Add corner-notch motif to activity cards + home hero #website #feat #p2 — docs/superpowers/specs/2026-06-14-corner-notch-design.md
 - [x] Rename "Excursions" activity to "Trips" across site (route → /trips, vercel.json redirect from /excursions) #website #chore #p2

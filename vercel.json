@@ -4,6 +4,17 @@
       "source": "/excursions",
       "destination": "/trips",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.dipclub.nl"
+        }
+      ],
+      "destination": "https://dipclub.nl/:path*",
+      "permanent": true
     }
   ]
 }
