@@ -19,11 +19,8 @@ Card conventions:
 - [ ] Tighten dipclub.nl DMARC to p=quarantine #infra #sec #p3 — after ~2 weeks of rua reports at p=none confirm nothing legitimate fails, and DKIM is published
 - [ ] Remove or repurpose unused `UtilityCard` ui primitive #website #chore #p3 — orphaned after the home hero dropped its floating Field Notes card
 - [ ] Pin contact-page info cards to bg-white #website #chore #p3 — they still use bg-paper (now off-white #fafaf8); make white to match field-note cards
-- [ ] Write field note: How to start cold-water swimming in Amsterdam #content #p3 — (P) Outdoor Swimming · where to go, what to bring, staying safe
 - [ ] Write field note: A year of swimming the Amstel through every season #content #p3 — (E) Outdoor Swimming · what it taught me
 - [ ] Write field note: What cold-water immersion actually does to your body #content #p3 — (P) Outdoor Swimming · the science, minus the hype
-- [ ] Write field note: Sauna benefits beyond the heat #content #p3 — (P) Social Sauna · what the research really says
-- [ ] Write field note: Why we end every dip in the sauna #content #p3 — (E) Social Sauna · the ritual of warming up together
 - [ ] Write field note: Sauna etiquette for first-timers #content #p3 — (P) Social Sauna · the unwritten rules
 - [ ] Write field note: Types of breath work explained #content #p3 — (P) Breath Work · Wim Hof, box, coherent — and when to use each
 - [ ] Write field note: My first breath-hold panic #content #p3 — (E) Breath Work · what it taught me about control
@@ -38,8 +35,13 @@ Card conventions:
 
 ## In Progress
 
+- [ ] Write field note: The best social wellness spots in Amsterdam #content #p3 — (P) Social Sauna · draft in content/field-notes/2026-10-03-social-wellness-spots-amsterdam.mdx; Pascal to review before publish
+
 ## Done
 
+- [x] Write field note: How to start cold-water swimming in Amsterdam #content #p3 — content/field-notes/2026-10-03-start-cold-water-swimming-amsterdam.mdx
+- [x] Write field note: Sauna benefits beyond the heat #content #p3 — content/field-notes/2026-10-03-sauna-benefits-beyond-the-heat.mdx
+- [x] Write field note: Why we end every dip in the sauna #content #p3 — content/field-notes/2026-10-03-why-we-end-every-dip-in-the-sauna.mdx
 - [x] Add SPF + DMARC records for dipclub.nl #infra #sec #p2 — SPF `v=spf1 include:_spf.google.com ~all` + DMARC `p=none` with rua to hello@; applied via TransIP API, verified in public DNS
 - [x] Remove stale ftp/mail CNAMEs from dipclub.nl zone #infra #chore #p3 — both removed; MX, www and apex untouched
 - [x] Simplify mobile menu: collapse Activities sub-links into one link #website #chore #p3 — mobile shows a flat 5-item menu; Activities → /#activities (home overview) so all three stay reachable. Desktop dropdown unchanged
